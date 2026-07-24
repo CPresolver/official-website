@@ -1,0 +1,61 @@
+{
+  "Home": {
+    "banner": {
+      "title": "Welcome to",
+      "description": "Making us the best of yesterday.",
+      "button": "See our products",
+      "title_qoute": "Our vision",
+      "quote": "Evolution is inevitable; it is up to you to decide wheter you will be part of it or not."
+    },
+    "mission": {
+      "name": "Our Mission",
+      "title": "Our core mission",
+      "description": "On our journey, we embrace complexity as a challenge, seeking to unravel intricate enigmas with accurate and accessible technological solutions. We believe that true innovation lies in the ability to simplify the intricate, and it is this belief that drives our mission: to develop tools that transform complex problems into simple solutions, making the world more accessible and efficient.",
+      "button": "Learn more"
+    },
+    "story": {
+      "name": "Our Story",
+      "title": "Our temporal progress",
+      "description": "From our humble beginnings to becoming a leader in our field, our story is one of passion, dedication, and relentless pursuit of excellence.",
+      "button": "Learn more"
+    },
+    "target": {
+      "name": "Our target",
+      "title": "Our target",
+      "description": "From our humble beginnings to becoming a leader in our field, our story is one of passion, dedication, and relentless pursuit of excellence.",
+      "button": "Learn more"
+    },
+    "solution": {
+      "name": "Our solution",
+      "title": "Why choose our solutions?",
+      "categories": {
+        "category1": {
+          "title": "Tecnologic Innovation",
+          "description": "We are committed to staying at the forefront of technological advancements, continuously seeking innovative solutions that address the evolving needs of our clients."
+        },
+        "category2": {
+          "title": "Quality",
+          "description": "We prioritize quality in every aspect of our work, ensuring that our solutions meet the highest standards and deliver exceptional value to our clients."
+        },
+        "category3": {
+          "title": "Customer-Centric Approach",
+          "description": "We place our clients at the center of everything we do, striving to understand their unique challenges and providing tailored solutions that drive their success."
+        }
+      },
+      "button": "Learn more"
+    },
+    "message": {
+      "title": "< Message from our COO >",
+      "greeting": "Caros amigos e parceiros,",
+      "paragraph1": "É com grande entusiasmo que os saúdo em nome da C.Presolver. Desde o início, temos nos dedicado a transformar desafios em oportunidades por meio da tecnologia.",
+      "paragraph2": "Vocês são mais do que clientes ou parceiros — são visionários que compartilham conosco a paixão por inovação. Essa conexão nos inspira a ir além todos os dias.",
+      "paragraph3": "Na C.Presolver, buscamos mais do que oferecer soluções: queremos construir relações sólidas, baseadas na confiança, na excelência e no compromisso com vocês.",
+      "paragraph4": "Agradeço sinceramente por estarem conosco nessa jornada. Juntos, podemos alcançar grandes conquistas e moldar um futuro melhor.",
+      "acknowledgment": "Muito obrigado pela confiança!",
+      "from": "— Ariel A. Chama, COO"
+    },
+    "solutions": {
+      "title": "Perhaps you know"
+    }
+  }
+}
