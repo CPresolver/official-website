@@ -57,5 +57,122 @@
     "solutions": {
       "title": "Perhaps you know"
     }
+  },
+  "CreativeHouse": {
+    "banner": {
+      "title": "Welcome to",
+      "description": "Here, your big idea takes shape.",
+      "button": "Let's schedule a coffee meeting!",
+      "title_quote": "Our vision",
+      "quote": "Every great idea begins with a simple, precise, and correct form."
+    },
+    "services": {
+      "title": "Our Services",
+      "description": "Your idea deserves more than just existing in your imagination. At the Creative House, it takes shape (digitally or physically), built to last.",
+      "categories": {
+        "category1": {
+          "title": "Web Development",
+          "description": "We develop modern, secure, and scalable websites, from institutional sites to complex platforms, always prioritizing performance and user experience."
+        },
+        "category2": {
+          "title": "Mobile Development",
+          "description": ""
+        },
+        "category3": {
+          "title": "Integrations and APIs",
+          "description": ""
+        },
+        "category4": {
+          "title": "Cloud & DevOps",
+          "description": ""
+        },
+        "category5": {
+          "title": "Architecture and Interior Design",
+          "description": ""
+        },
+        "category6": {
+          "title": "Custom Software",
+          "description": ""
+        },
+        "category7": {
+          "title": "UI/UX Design",
+          "description": ""
+        },
+        "category8": {
+          "title": "Maintenance and Support",
+          "description": ""
+        }
+      }
+    },
+    "projects": {
+      "title": "Our Projects",
+      "description": "Your idea deserves more than just existing in your imagination. At the Creative House, it takes shape (digitally or physically), built to last.",
+      "categories": {
+        "all": "All Projects",
+        "mobile": "Mobile Development"
+      },
+      "items": {
+        "spout": {
+          "title": "Spout",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+        },
+        "efarm": {
+          "title": "E-farm",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+        },
+        "cpsongs": {
+          "title": "CPsongs",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+        }
+      }
+    },
+    "cta": {
+      "title": "Join us on your journey and be the next success story.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo.",
+      "highlight": "Unlock your potential now, and track the growth of your business.",
+      "button": "Draft Session"
+    },
+    "footer": {
+      "hire": {
+        "title": "Do you want to hire our team?",
+        "button": "About Us",
+        "subtitle": "Let's schedule a coffee meeting!"
+      },
+      "company": {
+        "title": "Company",
+        "items": [
+          "About Us",
+          "Mission And Vision",
+          "Our Team",
+          "Careers"
+        ]
+      },
+      "services": {
+        "title": "Services",
+        "items": [
+          "Software Development",
+          "Mobile Applications",
+          "Artificial Intelligence",
+          "Digital Consulting"
+        ]
+      },
+      "products": {
+        "title": "Products",
+        "items": [
+          "Spout",
+          "E-Farm",
+          "CPSongs"
+        ]
+      },
+      "bottom": {
+        "copyright": "© C.Presolver 2025",
+        "links": [
+          "Sitemap",
+          "Contact C.Presolver",
+          "Privacy Policy",
+          "Terms And Conditions"
+        ]
+      }
+    }
   }
 }

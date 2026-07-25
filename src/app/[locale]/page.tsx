@@ -2,61 +2,17 @@
 
 import Image from "next/image"
 import { useTranslations } from 'next-intl'
-import { useState } from 'react'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   const t = useTranslations('Home');
-  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
       <div className="flex flex-col flex-1 items-center justify-center font-sans ">
         <main className="flex flex-1 w-full max-w-6xl flex-col items-center justify-between py-10 px-6 md:px-16 sm:items-start">
-          <nav className="w-full md:w-auto bg-black">
-            <div className="flex flex-row items-center justify-between md:justify-start gap-4 md:gap-50 px-6 py-4">
-              <div>
-                <h2>CPresolver</h2>
-              </div>
-
-              {/* Menu desktop */}
-              <div className="hidden md:flex flex-row gap-8">
-                <li className="list-none">Company</li>
-                <li className="list-none">Safety</li>
-                <li className="list-none">Product</li>
-                <li className="list-none">Culture</li>
-              </div>
-
-              <div className="hidden md:block">
-                <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4 my-3">
-                  Creative House
-                </button>
-              </div>
-
-              {/* Botão hamburger - só mobile */}
-              <button
-                className="md:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8"
-                onClick={() => setMenuOpen(!menuOpen)}
-                aria-label="Toggle menu"
-              >
-                <span className={`block w-6 h-0.5 bg-white transition-transform ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
-                <span className={`block w-6 h-0.5 bg-white transition-opacity ${menuOpen ? 'opacity-0' : ''}`} />
-                <span className={`block w-6 h-0.5 bg-white transition-transform ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
-              </button>
-            </div>
-
-            {/* Menu mobile (dropdown) */}
-            {menuOpen && (
-              <div className="md:hidden flex flex-col gap-4 px-6 pb-6">
-                <li className="list-none">Company</li>
-                <li className="list-none">Safety</li>
-                <li className="list-none">Product</li>
-                <li className="list-none">Culture</li>
-                <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4 w-fit">
-                  Creative House
-                </button>
-              </div>
-            )}
-          </nav>
+          <Navbar />
 
           <div className="pb-10 pt-16 md:pb-20 md:pt-40 w-full">
             <div className="flex flex-col md:flex-row justify-between gap-8">
@@ -326,55 +282,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="flex items-center justify-center font-sans bg-[#1a1a1a] px-6">
-        <div className="max-w-6xl my-10 w-full">
-          <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-[300px]">
-            <div>
-              <h3 className="text-2xl">Do you want to hire our team?</h3>
-
-              <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4 my-3">
-                {t('banner.button')}
-              </button>
-              <p className="text-white/50 text-sm">Lets schedule a coffee meeting!</p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-8 sm:gap-16">
-              <div>
-                <h4 className="text-xl font-bold mb-2">Company</h4>
-                <p className="mb-1 text-white/50 text-sm">About us</p>
-                <p className="mb-1 text-white/50 text-sm">Mission and Vision</p>
-                <p className="mb-1 text-white/50 text-sm">Our team</p>
-                <p className="mb-1 text-white/50 text-sm">Careers</p>
-              </div>
-
-              <div>
-                <h4 className="text-xl font-bold mb-2">Services</h4>
-                <p className="mb-1 text-white/50 text-sm">Software Development</p>
-                <p className="mb-1 text-white/50 text-sm">Mobile Applications</p>
-                <p className="mb-1 text-white/50 text-sm">Artificial intelligence</p>
-                <p className="mb-1 text-white/50 text-sm">Digital Consulting</p>
-              </div>
-
-              <div>
-                <h4 className="text-xl font-bold mb-2">Products</h4>
-                <p className="mb-1 text-white/50 text-sm">Spout</p>
-                <p className="mb-1 text-white/50 text-sm">E-Farm</p>
-                <p className="mb-1 text-white/50 text-sm">CPsongs</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row justify-between mt-10 md:mt-20 gap-4">
-            <p className="text-white/50 text-sm">© 2024 C.Presolver 2026</p>
-            <div className="flex flex-row flex-wrap gap-4 sm:gap-8">
-              <li className="list-none text-white/50 text-sm">Sitemap</li>
-              <li className="list-none text-white/50 text-sm">Contact CPresolver</li>
-              <li className="list-none text-white/50 text-sm">Privacy Policy</li>
-              <li className="list-none text-white/50 text-sm">Terms and conditions</li>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }
