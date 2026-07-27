@@ -4,6 +4,7 @@ import Image from "next/image"
 import { useTranslations } from 'next-intl'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import NeuralBrain from "@/components/NeuralBrain"
 
 export default function Home() {
   const t = useTranslations('Home');
@@ -23,18 +24,33 @@ export default function Home() {
                   {t('banner.description')}
                 </p>
 
-                <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4">
-                  {t('banner.button')}
-                </button>
+                <div className="relative w-fit">
+                  <div className="absolute inset-0 border bg-[#F2EFEF] opacity-50 border-white/30 translate-x-2 translate-y-2 -z-10" />
+                  <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4">
+                    {t('banner.button')}
+                    <Image
+                      src="/images/icons/arrow_forward.png"
+                      alt="Arrow Right"
+                      width={40}
+                      height={30}
+                      className="inline-block ml-2"
+                    />
+                  </button>
+                </div>
               </div>
 
               <div>
-                <Image
+                {/*<Image
                   src="/images/banner_futuristic.png"
                   alt="Banner"
                   width={500}
                   height={300}
                   className="w-full h-auto md:w-[500px]"
+                />*/}
+                <NeuralBrain
+                  src="/images/banner_futuristic.png"
+                  width={500}
+                  height={300}
                 />
               </div>
             </div>
@@ -48,9 +64,9 @@ export default function Home() {
                 {t('banner.quote')}
               </p>
             </div>
-          </div>
-        </main>
-      </div>
+          </div >
+        </main >
+      </div >
 
       <div className="flex flex-col md:flex-row ">
         <div className="w-full md:w-1/2">
@@ -71,11 +87,12 @@ export default function Home() {
 
             <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8">
               {t('mission.button')}
+
               <Image
-                src="/images/arrow_forward.png"
+                src="/images/icons/arrow_forward.png"
                 alt="Arrow Right"
-                width={20}
-                height={20}
+                width={40}
+                height={30}
                 className="inline-block ml-2"
               />
             </button>
@@ -92,11 +109,12 @@ export default function Home() {
 
             <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8">
               {t('story.button')}
+
               <Image
-                src="/images/arrow_forward.png"
+                src="/images/icons/arrow_forward.png"
                 alt="Arrow Right"
-                width={20}
-                height={20}
+                width={40}
+                height={30}
                 className="inline-block ml-2"
               />
             </button>
@@ -133,11 +151,12 @@ export default function Home() {
 
             <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8">
               {t('target.button')}
+
               <Image
-                src="/images/arrow_forward.png"
+                src="/images/icons/arrow_forward.png"
                 alt="Arrow Right"
-                width={20}
-                height={20}
+                width={40}
+                height={30}
                 className="inline-block ml-2"
               />
             </button>
@@ -155,7 +174,7 @@ export default function Home() {
               <div className="bg-[#1a1a1a] p-4 border border-white/20 w-full md:w-2/5">
                 <div className="flex flex-row items-center gap-2 mb-2">
                   <Image
-                    src="/images/icon_tech.png"
+                    src="/images/icons/icon_tech.png"
                     alt="Category 3"
                     width={20}
                     height={20}
@@ -167,7 +186,7 @@ export default function Home() {
               <div className="bg-[#1a1a1a] p-4 border border-white/20 w-full md:w-2/5">
                 <div className="flex flex-row items-center gap-2 mb-2">
                   <Image
-                    src="/images/icon_tech.png"
+                    src="/images/icons/icon_tech.png"
                     alt="Category 2"
                     width={20}
                     height={20}
@@ -179,7 +198,7 @@ export default function Home() {
               <div className="bg-[#1a1a1a] p-4 border border-white/20 w-full md:w-2/5">
                 <div className="flex flex-row items-center gap-2 mb-2">
                   <Image
-                    src="/images/icon_tech.png"
+                    src="/images/icons/icon_tech.png"
                     alt="Category 3"
                     width={20}
                     height={20}
@@ -191,7 +210,7 @@ export default function Home() {
               <div className="bg-[#1a1a1a] p-4 border border-white/20 w-full md:w-2/5">
                 <div className="flex flex-row items-center gap-2 mb-2">
                   <Image
-                    src="/images/icon_tech.png"
+                    src="/images/icons/icon_tech.png"
                     alt="Category 3"
                     width={20}
                     height={20}
@@ -204,11 +223,12 @@ export default function Home() {
 
             <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8">
               {t('solution.button')}
+
               <Image
-                src="/images/arrow_forward.png"
+                src="/images/icons/arrow_forward.png"
                 alt="Arrow Right"
-                width={20}
-                height={20}
+                width={40}
+                height={30}
                 className="inline-block ml-2"
               />
             </button>

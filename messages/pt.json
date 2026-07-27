@@ -1,8 +1,220 @@
 {
   "Home": {
     "banner": {
-      "title": "Bem-vindo",
-    "description": "Criamos soluções digitais."
+      "title": "Bem-vindo à",
+      "description": "Tornando-nos melhores do que fomos ontem.",
+      "button": "Ver os nossos produtos",
+      "title_qoute": "A nossa visão",
+      "quote": "A evolução é inevitável; cabe a si decidir se fará parte dela ou não."
+    },
+    "mission": {
+      "name": "A nossa missão",
+      "title": "A nossa missão principal",
+      "description": "Na nossa jornada, encaramos a complexidade como um desafio, procurando resolver problemas complexos através de soluções tecnológicas precisas e acessíveis. Acreditamos que a verdadeira inovação está na capacidade de simplificar o que é complexo, e é essa convicção que orienta a nossa missão: desenvolver ferramentas que transformam desafios complexos em soluções simples, tornando o mundo mais acessível e eficiente.",
+      "button": "Saber mais"
+    },
+    "story": {
+      "name": "A nossa história",
+      "title": "A nossa evolução",
+      "description": "Desde os nossos humildes começos até nos tornarmos uma referência na nossa área, a nossa história é marcada pela paixão, dedicação e busca contínua pela excelência.",
+      "button": "Saber mais"
+    },
+    "target": {
+      "name": "O nosso objetivo",
+      "title": "O nosso objetivo",
+      "description": "Trabalhamos para criar soluções que impulsionam pessoas e empresas, ajudando-as a enfrentar desafios e a alcançar o seu máximo potencial através da tecnologia.",
+      "button": "Saber mais"
+    },
+    "solution": {
+      "name": "As nossas soluções",
+      "title": "Porquê escolher as nossas soluções?",
+      "categories": {
+        "category1": {
+          "title": "Inovação Tecnológica",
+          "description": "Mantemo-nos na vanguarda da tecnologia, desenvolvendo continuamente soluções inovadoras que respondem às necessidades em constante evolução dos nossos clientes."
+        },
+        "category2": {
+          "title": "Qualidade",
+          "description": "A qualidade está presente em tudo o que fazemos, garantindo soluções que cumprem os mais elevados padrões e proporcionam valor real aos nossos clientes."
+        },
+        "category3": {
+          "title": "Foco no Cliente",
+          "description": "Colocamos os nossos clientes no centro de tudo, procurando compreender os seus desafios e criar soluções personalizadas que contribuam para o seu sucesso."
+        }
+      },
+      "button": "Saber mais"
+    },
+    "message": {
+      "title": "< Mensagem do nosso COO >",
+      "greeting": "Caros amigos e parceiros,",
+      "paragraph1": "É com enorme entusiasmo que vos dou as boas-vindas em nome da C.Presolver. Desde o primeiro dia, dedicamo-nos a transformar desafios em oportunidades através da tecnologia.",
+      "paragraph2": "Vocês são muito mais do que clientes ou parceiros — são visionários que partilham connosco a paixão pela inovação. É essa ligação que nos inspira a superar expectativas todos os dias.",
+      "paragraph3": "Na C.Presolver, queremos ir além de desenvolver soluções. O nosso objetivo é construir relações duradouras, assentes na confiança, excelência e compromisso.",
+      "paragraph4": "Agradeço sinceramente por fazerem parte desta jornada. Juntos, podemos alcançar grandes conquistas e construir um futuro melhor.",
+      "acknowledgment": "Muito obrigado pela confiança!",
+      "from": "— Ariel A. Chama, COO"
+    },
+    "solutions": {
+      "title": "Talvez conheça"
+    }
+  },
+  "CreativeHouse": {
+    "banner": {
+      "title": "Bem-vindo à",
+      "description": "Aqui, a sua grande ideia ganha forma.",
+      "button": "Vamos marcar um café!",
+      "title_quote": "A nossa visão",
+      "quote": "Toda grande ideia começa por uma forma simples, precisa e correta."
+    },
+    "services": {
+      "title": "Os nossos serviços",
+      "description": "A sua ideia merece mais do que existir apenas na imaginação. Na Creative House, damos-lhe forma — digital ou física — criando soluções pensadas para durar.",
+      "categories": {
+        "category1": {
+          "title": "Desenvolvimento Web",
+          "description": "Desenvolvemos websites modernos, seguros e escaláveis, desde páginas institucionais até plataformas complexas, sempre com foco no desempenho e na experiência do utilizador."
+        },
+        "category2": {
+          "title": "Desenvolvimento Mobile",
+          "description": "Criamos aplicações móveis nativas e multiplataforma, com elevado desempenho, design intuitivo e integração perfeita com os seus sistemas."
+        },
+        "category3": {
+          "title": "Integrações e APIs",
+          "description": "Ligamos ferramentas e plataformas através de APIs robustas e bem documentadas, automatizando processos e permitindo uma comunicação eficiente entre sistemas."
+        },
+        "category4": {
+          "title": "Cloud & DevOps",
+          "description": "Projetamos e gerimos infraestruturas cloud escaláveis, com pipelines de implementação automatizados que garantem segurança, fiabilidade e entrega contínua."
+        },
+        "category5": {
+          "title": "Arquitetura e Design de Interiores",
+          "description": "Concebemos espaços funcionais e esteticamente equilibrados, transformando a sua visão em projetos detalhados de arquitetura e design de interiores."
+        },
+        "category6": {
+          "title": "Software Personalizado",
+          "description": "Desenvolvemos soluções de software à medida dos seus processos, substituindo ferramentas genéricas por sistemas criados especificamente para o seu negócio."
+        },
+        "category7": {
+          "title": "Design UI/UX",
+          "description": "Criamos interfaces intuitivas e visualmente apelativas, baseadas na experiência do utilizador, garantindo interações naturais e uma comunicação clara."
+        },
+        "category8": {
+          "title": "Manutenção e Suporte",
+          "description": "Prestamos monitorização contínua, atualizações e suporte técnico para manter os seus sistemas seguros, atualizados e a funcionar sem interrupções."
+        }
+      }
+    },
+    "projects": {
+      "title": "Os nossos projetos",
+      "description": "Cada projeto representa uma ideia transformada em realidade através da inovação, criatividade e excelência técnica.",
+      "categories": {
+        "all": "Todos os Projetos",
+        "mobile": "Desenvolvimento Mobile"
+      },
+      "items": {
+        "spout": {
+          "title": "Spout",
+          "description": "Uma plataforma moderna desenvolvida para simplificar processos e proporcionar uma experiência intuitiva aos utilizadores."
+        },
+        "efarm": {
+          "title": "E-Farm",
+          "description": "Uma solução tecnológica criada para impulsionar a transformação digital no setor agrícola."
+        },
+        "cpsongs": {
+          "title": "CPSongs",
+          "description": "Uma plataforma inovadora dedicada à gestão e distribuição de conteúdos musicais."
+        }
+      }
+    },
+    "cta": {
+      "title": "Junte-se a nós nesta jornada e seja o próximo caso de sucesso.",
+      "description": "Na C.Presolver acreditamos que cada grande negócio começa com uma grande ideia. Estamos prontos para ajudá-lo a transformá-la numa solução digital de excelência.",
+      "highlight": "Desbloqueie o potencial do seu negócio e acompanhe o seu crescimento.",
+      "button": "Agendar uma sessão"
+    },
+    "footer": {
+      "hire": {
+        "title": "Pretende contratar a nossa equipa?",
+        "button": "Sobre Nós",
+        "subtitle": "Vamos marcar um café!"
+      },
+      "company": {
+        "title": "Empresa",
+        "items": [
+          "Sobre Nós",
+          "Missão e Visão",
+          "A Nossa Equipa",
+          "Carreiras"
+        ]
+      },
+      "services": {
+        "title": "Serviços",
+        "items": [
+          "Desenvolvimento de Software",
+          "Aplicações Móveis",
+          "Inteligência Artificial",
+          "Consultoria Digital"
+        ]
+      },
+      "products": {
+        "title": "Produtos",
+        "items": [
+          "Spout",
+          "E-Farm",
+          "CPSongs"
+        ]
+      },
+      "bottom": {
+        "copyright": "© C.Presolver 2026",
+        "links": [
+          "Mapa do Site",
+          "Contactar a C.Presolver",
+          "Política de Privacidade",
+          "Termos e Condições"
+        ]
+      }
+    }
+  },
+  "Footer": {
+    "hire": {
+      "title": "Pretende contratar a nossa equipa?",
+      "button": "Ver os nossos produtos",
+      "subtitle": "Vamos marcar um café!"
+    },
+    "company": {
+      "title": "Empresa",
+      "items": [
+        "Sobre Nós",
+        "Missão e Visão",
+        "A Nossa Equipa",
+        "Carreiras"
+      ]
+    },
+    "services": {
+      "title": "Serviços",
+      "items": [
+        "Desenvolvimento de Software",
+        "Aplicações Móveis",
+        "Inteligência Artificial",
+        "Consultoria Digital"
+      ]
+    },
+    "products": {
+      "title": "Produtos",
+      "items": [
+        "Spout",
+        "E-Farm",
+        "CPSongs"
+      ]
+    },
+    "bottom": {
+      "copyright": "© C.Presolver 2026",
+      "links": [
+        "Mapa do Site",
+        "Contactar a C.Presolver",
+        "Política de Privacidade",
+        "Termos e Condições"
+      ]
     }
   }
 }

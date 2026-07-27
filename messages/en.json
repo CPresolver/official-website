@@ -76,31 +76,31 @@
         },
         "category2": {
           "title": "Mobile Development",
-          "description": ""
+          "description": "We build native and cross-platform mobile apps focused on smooth performance, intuitive design, and seamless integration with your existing systems."
         },
         "category3": {
           "title": "Integrations and APIs",
-          "description": ""
+          "description": "We connect your tools and platforms through robust, well-documented APIs, streamlining workflows and enabling your systems to communicate effortlessly."
         },
         "category4": {
           "title": "Cloud & DevOps",
-          "description": ""
+          "description": "We design and manage scalable cloud infrastructure with automated deployment pipelines, ensuring reliability, security, and continuous delivery."
         },
         "category5": {
           "title": "Architecture and Interior Design",
-          "description": ""
+          "description": "We plan functional, aesthetic spaces that blend form and purpose, translating your vision into detailed architectural and interior design projects."
         },
         "category6": {
           "title": "Custom Software",
-          "description": ""
+          "description": "We build tailor-made software solutions designed around your specific processes, replacing generic tools with systems built exactly for your needs."
         },
         "category7": {
           "title": "UI/UX Design",
-          "description": ""
+          "description": "We craft intuitive, visually compelling interfaces grounded in user research, ensuring every interaction feels natural and every screen tells a clear story."
         },
         "category8": {
           "title": "Maintenance and Support",
-          "description": ""
+          "description": "We provide ongoing monitoring, updates, and technical support to keep your systems running smoothly, secure, and up to date long after launch."
         }
       }
     },
@@ -173,6 +173,48 @@
           "Terms And Conditions"
         ]
       }
+    }
+  },
+  "Footer": {
+    "hire": {
+      "title": "Do you want to hire our team?",
+      "button": "See our products",
+      "subtitle": "Lets schedule a coffee meeting!"
+    },
+    "company": {
+      "title": "Company",
+      "items": [
+        "About us",
+        "Mission and Vision",
+        "Our team",
+        "Careers"
+      ]
+    },
+    "services": {
+      "title": "Services",
+      "items": [
+        "Software Development",
+        "Mobile Applications",
+        "Artificial intelligence",
+        "Digital Consulting"
+      ]
+    },
+    "products": {
+      "title": "Products",
+      "items": [
+        "Spout",
+        "E-Farm",
+        "CPsongs"
+      ]
+    },
+    "bottom": {
+      "copyright": "© CPresolver 2026",
+      "links": [
+        "Sitemap",
+        "Contact CPresolver",
+        "Privacy Policy",
+        "Terms and conditions"
+      ]
     }
   }
 }

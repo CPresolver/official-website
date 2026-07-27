@@ -1,56 +1,68 @@
 "use client"
 
 import { useTranslations } from 'next-intl'
+import Image from 'next/image';
 
 export default function Footer() {
-  const t = useTranslations('Home');
+  const t = useTranslations('Footer');
+
+  const companyItems = t.raw('company.items') as string[];
+  const servicesItems = t.raw('services.items') as string[];
+  const productsItems = t.raw('products.items') as string[];
+  const bottomLinks = t.raw('bottom.links') as string[];
 
   return (
     <footer className="flex items-center justify-center font-sans bg-[#1a1a1a] px-6">
       <div className="max-w-6xl my-10 w-full">
         <div className="flex flex-col md:flex-row justify-between gap-10 md:gap-[300px]">
           <div>
-            <h3 className="text-2xl">Do you want to hire our team?</h3>
+            <h3 className="text-2xl">{t('hire.title')}</h3>
 
             <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4 my-3">
-              {t('banner.button')}
+              {t('hire.button')}
+              <Image
+                src="/images/icons/arrow_forward.png"
+                alt="Arrow Right"
+                width={40}
+                height={30}
+                className="inline-block ml-2"
+              />
             </button>
-            <p className="text-white/50 text-sm">Lets schedule a coffee meeting!</p>
+            <p className="text-white/50 text-sm">{t('hire.subtitle')}</p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-8 sm:gap-16">
             <div>
-              <h4 className="text-xl font-bold mb-2">Company</h4>
-              <p className="mb-1 text-white/50 text-sm">About us</p>
-              <p className="mb-1 text-white/50 text-sm">Mission and Vision</p>
-              <p className="mb-1 text-white/50 text-sm">Our team</p>
-              <p className="mb-1 text-white/50 text-sm">Careers</p>
+              <h4 className="text-xl font-bold mb-2">{t('company.title')}</h4>
+              {companyItems.map((item) => (
+                <p key={item} className="mb-1 text-white/50 text-sm">{item}</p>
+              ))}
             </div>
 
             <div>
-              <h4 className="text-xl font-bold mb-2">Services</h4>
-              <p className="mb-1 text-white/50 text-sm">Software Development</p>
-              <p className="mb-1 text-white/50 text-sm">Mobile Applications</p>
-              <p className="mb-1 text-white/50 text-sm">Artificial intelligence</p>
-              <p className="mb-1 text-white/50 text-sm">Digital Consulting</p>
+              <h4 className="text-xl font-bold mb-2">{t('services.title')}</h4>
+              {servicesItems.map((item) => (
+                <p key={item} className="mb-1 text-white/50 text-sm">{item}</p>
+              ))}
             </div>
 
             <div>
-              <h4 className="text-xl font-bold mb-2">Products</h4>
-              <p className="mb-1 text-white/50 text-sm">Spout</p>
-              <p className="mb-1 text-white/50 text-sm">E-Farm</p>
-              <p className="mb-1 text-white/50 text-sm">CPsongs</p>
+              <h4 className="text-xl font-bold mb-2">{t('products.title')}</h4>
+              {productsItems.map((item) => (
+                <p key={item} className="mb-1 text-white/50 text-sm">{item}</p>
+              ))}
             </div>
           </div>
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between mt-10 md:mt-20 gap-4">
-          <p className="text-white/50 text-sm">© 2024 C.Presolver 2026</p>
+          <p className="text-white/50 text-sm">{t('bottom.copyright')}</p>
           <div className="flex flex-row flex-wrap gap-4 sm:gap-8">
-            <li className="list-none text-white/50 text-sm">Sitemap</li>
-            <li className="list-none text-white/50 text-sm">Contact CPresolver</li>
-            <li className="list-none text-white/50 text-sm">Privacy Policy</li>
-            <li className="list-none text-white/50 text-sm">Terms and conditions</li>
+            {bottomLinks.map((link) => (
+              <li key={link} className="list-none text-white/50 text-sm">
+                {link}
+              </li>
+            ))}
           </div>
         </div>
       </div>

@@ -10,16 +10,17 @@ import AnimatedFigure from "@/components/Animatedfigure/Animatedfigure"
 export default function CreativeHouse() {
   const t = useTranslations('CreativeHouse');
   const [activeCategory, setActiveCategory] = useState('all');
+  const [activeService, setActiveService] = useState('category1');
 
   const services = [
-    { key: 'category3', icon: '/images/creative-house/icon_integrations.png', left: '14.8%', top: '8%' },
-    { key: 'category4', icon: '/images/creative-house/icon_cloud.png', left: '41.6%', top: '2%' },
-    { key: 'category5', icon: '/images/creative-house/icon_architecture.png', left: '70%', top: '4%' },
-    { key: 'category2', icon: '/images/creative-house/icon_mobile.png', left: '7.6%', top: '23%' },
-    { key: 'category1', icon: '/images/creative-house/icon_web.png', left: '7.6%', top: '45%' },
-    { key: 'category6', icon: '/images/creative-house/icon_custom.png', left: '71%', top: '36%' },
-    { key: 'category7', icon: '/images/creative-house/icon_uiux.png', left: '74.5%', top: '68%' },
-    { key: 'category8', icon: '/images/creative-house/icon_maintenance.png', left: '41%', top: '84%' },
+    { key: 'category3', icon: '/images/icons/connect.png', left: '14.8%', top: '8%' },
+    { key: 'category4', icon: '/images/icons/cloud.png', left: '41.6%', top: '2%' },
+    { key: 'category5', icon: '/images/icons/architecture.png', left: '70%', top: '4%' },
+    { key: 'category2', icon: '/images/icons/mobile.png', left: '7.6%', top: '23%' },
+    { key: 'category1', icon: '/images/icons/web.png', left: '7.6%', top: '45%' },
+    { key: 'category6', icon: '/images/icons/icon_tech.png', left: '71%', top: '36%' },
+    { key: 'category7', icon: '/images/icons/design.png', left: '74.5%', top: '68%' },
+    { key: 'category8', icon: '/images/icons/icon_tech.png', left: '41%', top: '84%' },
   ];
 
   const projects = [
@@ -47,7 +48,7 @@ export default function CreativeHouse() {
                 </p>
 
                 <div className="relative w-fit">
-                  <div className="absolute inset-0 border border-white/30 translate-x-2 translate-y-2 -z-10" />
+                  <div className="absolute inset-0 border border-white/30 bg-[#F2EFEF] opacity-50 translate-x-2 translate-y-2 -z-10" />
                   <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4">
                     {t('banner.button')}
                   </button>
@@ -55,13 +56,6 @@ export default function CreativeHouse() {
               </div>
 
               <div className="w-full md:w-1/2 flex justify-center">
-                {/*<Image
-                  src="/images/creative-house/figure_banner.png"
-                  alt="Banner"
-                  width={500}
-                  height={400}
-                  className="w-full h-auto max-w-md"
-                />*/}
                 <AnimatedFigure />
               </div>
             </div>
@@ -132,12 +126,17 @@ export default function CreativeHouse() {
             {services.map((service) => {
               const description = t(`services.categories.${service.key}.description`);
               const hasDescription = description.length > 0;
+              const isActive = activeService === service.key;
+              const showDescription = isActive && hasDescription;
 
               return (
-                <div
+                <button
                   key={service.key}
-                  className={`absolute z-10 text-left border border-white/20 bg-black px-4 py-3 ${hasDescription ? 'w-64' : 'w-56'
-                    }`}
+                  onClick={() => setActiveService(service.key)}
+                  className={`absolute z-10 text-left border px-4 py-3 transition-all duration-300 hover:cursor-pointer ${isActive
+                      ? 'border-white/40 bg-[#111]'
+                      : 'border-white/20 bg-black hover:border-white/40'
+                    } ${showDescription ? 'w-64' : 'w-56'}`}
                   style={{ left: service.left, top: service.top }}
                 >
                   <div className="flex flex-row items-center gap-2">
@@ -146,10 +145,10 @@ export default function CreativeHouse() {
                       {t(`services.categories.${service.key}.title`)}
                     </h3>
                   </div>
-                  {hasDescription && (
+                  {showDescription && (
                     <p className="text-sm text-white/60 mt-3">{description}</p>
                   )}
-                </div>
+                </button>
               );
             })}
           </div>
@@ -166,11 +165,15 @@ export default function CreativeHouse() {
             {services.map((service) => {
               const description = t(`services.categories.${service.key}.description`);
               const hasDescription = description.length > 0;
+              const isActive = activeService === service.key;
+              const showDescription = isActive && hasDescription;
 
               return (
-                <div
+                <button
                   key={service.key}
-                  className="border border-white/20 bg-black px-4 py-3"
+                  onClick={() => setActiveService(service.key)}
+                  className={`text-left border px-4 py-3 transition-all duration-300 hover:cursor-pointer ${isActive ? 'border-white/40 bg-[#111]' : 'border-white/20 bg-black'
+                    }`}
                 >
                   <div className="flex flex-row items-center gap-2">
                     <Image src={service.icon} alt="" width={18} height={18} />
@@ -178,10 +181,10 @@ export default function CreativeHouse() {
                       {t(`services.categories.${service.key}.title`)}
                     </h3>
                   </div>
-                  {hasDescription && (
+                  {showDescription && (
                     <p className="text-sm text-white/60 mt-3">{description}</p>
                   )}
-                </div>
+                </button>
               );
             })}
           </div>
@@ -257,10 +260,22 @@ export default function CreativeHouse() {
             <h2 className="text-2xl md:text-4xl font-bold mb-6">{t('cta.title')}</h2>
             <p className="text-white/70 max-w-2xl mx-auto mb-2">{t('cta.description')}</p>
             <p className="font-medium mb-8">{t('cta.highlight')}</p>
-            <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4 inline-flex items-center gap-2">
-              {t('cta.button')}
-              <Image src="/images/icon_calendar.png" alt="" width={16} height={16} />
-            </button>
+
+            <div className="flex justify-center">
+              <div className="relative w-fit">
+                <div className="absolute inset-0 border bg-[#F2EFEF] opacity-50 border-white/30 translate-x-2 translate-y-2 -z-10" />
+                <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4">
+                  {t('cta.button')}
+                  <Image
+                    src="/images/icons/schedule.png"
+                    alt="Arrow Right"
+                    width={20}
+                    height={10}
+                    className="inline-block ml-2"
+                  />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
