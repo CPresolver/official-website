@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ContactSection from '@/components/ContactSection'
 import AnimatedFigure from "@/components/Animatedfigure/Animatedfigure"
 
 export default function CreativeHouse() {
@@ -56,11 +57,17 @@ export default function CreativeHouse() {
               </div>
 
               <div className="w-full md:w-1/2 flex justify-center">
-                <AnimatedFigure />
+                <Image
+                  src="/images/creative-house/figure_banner.png"
+                  alt="Banner Illustration"
+                  width={400}
+                  height={300}
+                  className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-full"
+                />
               </div>
             </div>
 
-            <div className="border border-white/20 p-3 mt-10 md:mt-16">
+            <div className="border border-white/20 p-3 mt-10 md:mt-16 bg-[#1A1A1A]">
               <h2 className="text-lg md:text-xl text-center mb-2">
                 {t('banner.title_quote')}
               </h2>
@@ -72,7 +79,7 @@ export default function CreativeHouse() {
         </main>
       </div>
 
-      <div className="w-full bg-gray-400 h-[300px]"></div>
+      <div className="w-full bg-gray-400 h-[150px] md:h-[300px]"></div>
 
       {/* Services */}
       <section className="bg-black py-16 md:py-24 px-6">
@@ -84,7 +91,6 @@ export default function CreativeHouse() {
 
           {/* Diagrama - desktop */}
           <div className="hidden md:block relative w-full aspect-[992/448] mt-16">
-            {/* Linhas de conexão */}
             <svg
               viewBox="0 0 992 448"
               className="absolute inset-0 w-full h-full z-0"
@@ -108,7 +114,6 @@ export default function CreativeHouse() {
               <circle cx="578" cy="295" r="3.5" fill="white" fillOpacity="0.7" />
             </svg>
 
-            {/* Ilustração central */}
             <div
               className="absolute z-0"
               style={{ left: '32%', top: '20%', width: '36%' }}
@@ -122,7 +127,6 @@ export default function CreativeHouse() {
               />
             </div>
 
-            {/* Caixas */}
             {services.map((service) => {
               const description = t(`services.categories.${service.key}.description`);
               const hasDescription = description.length > 0;
@@ -133,9 +137,9 @@ export default function CreativeHouse() {
                 <button
                   key={service.key}
                   onClick={() => setActiveService(service.key)}
-                  className={`absolute z-10 text-left border px-4 py-3 transition-all duration-300 hover:cursor-pointer ${isActive
-                      ? 'border-white/40 bg-[#111]'
-                      : 'border-white/20 bg-black hover:border-white/40'
+                  className={`absolute text-left border px-4 py-3 transition-all duration-300 hover:cursor-pointer ${isActive
+                    ? 'z-20 border-white/40 bg-[#111]'
+                    : 'z-10 border-white/20 bg-black hover:border-white/40'
                     } ${showDescription ? 'w-64' : 'w-56'}`}
                   style={{ left: service.left, top: service.top }}
                 >
@@ -160,7 +164,7 @@ export default function CreativeHouse() {
               alt="Services"
               width={300}
               height={300}
-              className="w-48 h-auto mx-auto mb-4 opacity-90"
+              className="w-40 sm:w-48 h-auto mx-auto mb-4 opacity-90"
             />
             {services.map((service) => {
               const description = t(`services.categories.${service.key}.description`);
@@ -254,8 +258,16 @@ export default function CreativeHouse() {
 
       {/* CTA */}
       <section className="px-6 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto border border-white/20 relative py-16 px-6 md:px-16 text-center overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.08),transparent_60%)]" />
+        <div className="max-w-4xl mx-auto border border-white/20 bg-black relative py-16 px-6 md:px-16 text-center overflow-hidden">
+          {/* Fundo com efeito de glow, igual ao print */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute -top-16 left-4 w-40 h-40 md:w-56 md:h-56 bg-white/10 rounded-full blur-3xl" />
+            <div className="absolute top-1/4 left-1/4 w-48 h-48 md:w-64 md:h-64 bg-white/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-10 left-1/3 w-40 h-40 md:w-56 md:h-56 bg-white/10 rounded-full blur-3xl" />
+            <div className="absolute top-6 right-6 w-32 h-32 md:w-48 md:h-48 bg-white/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-1/4 w-48 h-48 md:w-60 md:h-60 bg-white/10 rounded-full blur-3xl" />
+          </div>
+
           <div className="relative">
             <h2 className="text-2xl md:text-4xl font-bold mb-6">{t('cta.title')}</h2>
             <p className="text-white/70 max-w-2xl mx-auto mb-2">{t('cta.description')}</p>
@@ -279,6 +291,8 @@ export default function CreativeHouse() {
           </div>
         </div>
       </section>
+
+      <ContactSection />
 
       <Footer />
     </>

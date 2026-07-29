@@ -4,6 +4,7 @@ import Image from "next/image"
 import { useTranslations } from 'next-intl'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import ContactSection from '@/components/ContactSection'
 import NeuralBrain from "@/components/NeuralBrain"
 
 export default function Home() {
@@ -40,23 +41,18 @@ export default function Home() {
               </div>
 
               <div>
-                {/*<Image
+                <Image
                   src="/images/banner_futuristic.png"
                   alt="Banner"
                   width={500}
                   height={300}
                   className="w-full h-auto md:w-[500px]"
-                />*/}
-                <NeuralBrain
-                  src="/images/banner_futuristic.png"
-                  width={500}
-                  height={300}
                 />
               </div>
             </div>
 
 
-            <div className="border border-white/20 p-3 mt-6 md:mt-0 ml-0 md:ml-12 bg-black">
+            <div className="border border-white/20 p-3 mt-6 md:mt-0 ml-0 md:ml-12 bg-[#1A1A1A]">
               <h2 className="text-lg md:text-xl text-center mb-2 text-medium">
                 {t('banner.title_qoute')}
               </h2>
@@ -75,7 +71,7 @@ export default function Home() {
             alt="Banner"
             width={500}
             height={300}
-            className="w-full"
+            className="w-full h-[280px] sm:h-[400px] md:h-[620px] object-cover"
           />
         </div>
 
@@ -127,7 +123,7 @@ export default function Home() {
             alt="Banner"
             width={500}
             height={300}
-            className="w-full"
+            className="w-full h-[280px] sm:h-[400px] md:h-[620px] object-cover"
           />
         </div>
       </div>
@@ -139,7 +135,7 @@ export default function Home() {
             alt="Banner"
             width={500}
             height={300}
-            className="w-full"
+            className="w-full h-[280px] sm:h-[400px] md:h-[620px] object-cover"
           />
         </div>
 
@@ -241,7 +237,7 @@ export default function Home() {
             alt="Banner"
             width={500}
             height={300}
-            className="w-full"
+            className="w-full h-[280px] sm:h-[400px] md:h-[620px] object-cover"
           />
         </div>
       </div>
@@ -283,6 +279,7 @@ export default function Home() {
               alt="Banner"
               width={200}
               height={100}
+              className="w-[140px] sm:w-[180px] md:w-[200px] h-auto"
             />
 
             <Image
@@ -290,6 +287,7 @@ export default function Home() {
               alt="Banner"
               width={200}
               height={100}
+              className="w-[140px] sm:w-[180px] md:w-[200px] h-auto"
             />
 
             <Image
@@ -297,10 +295,13 @@ export default function Home() {
               alt="Banner"
               width={200}
               height={100}
+              className="w-[140px] sm:w-[180px] md:w-[200px] h-auto"
             />
           </div>
         </div>
       </section>
+
+      <ContactSection />
 
       <Footer />
     </>
