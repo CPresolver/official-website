@@ -216,5 +216,27 @@
         "Termos e Condições"
       ]
     }
+  },
+  "Contact": {
+    "title": "Vamos conversar",
+    "description": "Tem um projeto em mente ou apenas quer falar connosco? Preencha o formulário e entraremos em contacto consigo o mais breve possível.",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "O seu nome",
+      "email": "Email",
+      "emailPlaceholder": "o.seu@email.com",
+      "message": "Mensagem",
+      "messagePlaceholder": "Fale-nos sobre o seu projeto...",
+      "submit": "Enviar mensagem"
+    },
+    "info": {
+      "title": "Informações de contacto",
+      "email": "cpresolver@gmail.com",
+      "phone": "+351 928 067 407",
+      "address": "Lisboa, Portugal"
+    },
+    "social": {
+      "title": "Siga-nos"
+    }
   }
 }

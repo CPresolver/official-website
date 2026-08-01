@@ -19,9 +19,9 @@ export default function ContactSection() {
   };
 
   const socials = [
-    { name: 'Instagram', icon: '/images/icons/instagram.png', href: '#' },
-    { name: 'LinkedIn', icon: '/images/icons/linkedin.png', href: '#' },
-    { name: 'X', icon: '/images/icons/x.png', href: '#' },
+    { name: 'Instagram', icon: '/images/icons/instagram-brands-solid-full.svg', href: '#' },
+    { name: 'LinkedIn', icon: '/images/icons/linkedin-in-brands-solid-full.svg', href: '#' },
+    { name: 'Facebook', icon: '/images/icons/facebook-f-brands-solid-full.svg', href: '#' },
   ];
 
   return (
