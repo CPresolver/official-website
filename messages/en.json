@@ -109,7 +109,8 @@
       "description": "Your idea deserves more than just existing in your imagination. At the Creative House, it takes shape (digitally or physically), built to last.",
       "categories": {
         "all": "All Projects",
-        "mobile": "Mobile Development"
+        "mobile": "Mobile Development",
+        "web": "Web Development"
       },
       "items": {
         "spout": {

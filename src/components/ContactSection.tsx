@@ -4,25 +4,68 @@ import Image from "next/image"
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 
+type ModalState = {
+  open: boolean
+  type: 'success' | 'error'
+  message: string
+}
+
 export default function ContactSection() {
-  const t = useTranslations('Contact');
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const t = useTranslations('Contact')
+  const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [loading, setLoading] = useState(false)
+  const [modal, setModal] = useState<ModalState>({ open: false, type: 'success', message: '' })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Liga aqui o teu endpoint / serviço de email (ex: API route, Resend, Formspree...)
-    console.log(form);
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      })
+
+      if (!res.ok) {
+        throw new Error()
+      }
+
+      setModal({
+        open: true,
+        type: 'success',
+        message: 'Message sent successfully!',
+      })
+
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      })
+    } catch {
+      setModal({
+        open: true,
+        type: 'error',
+        message: 'Failed to send message.',
+      })
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const closeModal = () => setModal((prev) => ({ ...prev, open: false }))
 
   const socials = [
     { name: 'Instagram', icon: '/images/icons/instagram-brands-solid-full.svg', href: '#' },
     { name: 'LinkedIn', icon: '/images/icons/linkedin-in-brands-solid-full.svg', href: '#' },
     { name: 'Facebook', icon: '/images/icons/facebook-f-brands-solid-full.svg', href: '#' },
-  ];
+  ]
 
   return (
     <section className="bg-black px-6 py-16 md:py-24">
@@ -73,9 +116,10 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4 mt-2 w-fit"
+              disabled={loading}
+              className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4 mt-2 w-fit disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {t('form.submit')}
+              {loading ? '...' : t('form.submit')}
             </button>
           </form>
 
@@ -106,6 +150,45 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
-    </section >
+
+      {/* Modal */}
+      {modal.open && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-6"
+          onClick={closeModal}
+        >
+          <div
+            className="w-full max-w-sm bg-black border border-white/20 p-8 flex flex-col items-center text-center gap-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div
+              className={`w-12 h-12 rounded-full flex items-center justify-center border ${modal.type === 'success'
+                  ? 'border-green-400 text-green-400'
+                  : 'border-red-400 text-red-400'
+                }`}
+            >
+              {modal.type === 'success' ? (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              )}
+            </div>
+
+            <p className="text-white text-base font-medium">{modal.message}</p>
+
+            <button
+              onClick={closeModal}
+              className="mt-2 bg-white hover:bg-gray-300 hover:cursor-pointer text-black font-medium py-2 px-6"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+    </section>
   )
 }

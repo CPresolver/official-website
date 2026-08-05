@@ -52,7 +52,7 @@ export default function Home() {
             </div>
 
 
-            <div className="border border-white/20 p-3 mt-6 md:mt-0 ml-0 md:ml-12 bg-[#1A1A1A]">
+            <div className="border border-white/20 px-4 py-8 mt-6 md:mt-0 ml-0 md:ml-12 bg-[#1A1A1A]">
               <h2 className="text-lg md:text-xl text-center mb-2 text-medium">
                 {t('banner.title_qoute')}
               </h2>
@@ -71,7 +71,7 @@ export default function Home() {
             alt="Banner"
             width={500}
             height={300}
-            className="w-full h-[280px] sm:h-[400px] md:h-[620px] object-cover"
+            className="w-full h-[280px] sm:h-[400px] md:h-[520px] object-cover"
           />
         </div>
 
@@ -88,7 +88,7 @@ export default function Home() {
                 src="/images/icons/arrow_forward.png"
                 alt="Arrow Right"
                 width={40}
-                height={30}
+                height={20}
                 className="inline-block ml-2"
               />
             </button>
@@ -104,13 +104,13 @@ export default function Home() {
             <p className="text-lg">{t('story.description')}</p>
 
             <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8">
-              {t('story.button')}
+              {t('mission.button')}
 
               <Image
                 src="/images/icons/arrow_forward.png"
                 alt="Arrow Right"
                 width={40}
-                height={30}
+                height={20}
                 className="inline-block ml-2"
               />
             </button>
@@ -123,7 +123,7 @@ export default function Home() {
             alt="Banner"
             width={500}
             height={300}
-            className="w-full h-[280px] sm:h-[400px] md:h-[620px] object-cover"
+            className="w-full h-[280px] sm:h-[400px] md:h-[520px] object-cover"
           />
         </div>
       </div>
@@ -135,7 +135,7 @@ export default function Home() {
             alt="Banner"
             width={500}
             height={300}
-            className="w-full h-[280px] sm:h-[400px] md:h-[620px] object-cover"
+            className="w-full h-[280px] sm:h-[400px] md:h-[520px] object-cover"
           />
         </div>
 

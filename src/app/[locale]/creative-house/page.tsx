@@ -6,7 +6,6 @@ import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ContactSection from '@/components/ContactSection'
-import AnimatedFigure from "@/components/Animatedfigure/Animatedfigure"
 
 export default function CreativeHouse() {
   const t = useTranslations('CreativeHouse');
@@ -25,9 +24,9 @@ export default function CreativeHouse() {
   ];
 
   const projects = [
-    { key: 'spout', image: '/images/creative-house/projects/gradient1.png' },
-    { key: 'efarm', image: '/images/creative-house/projects/gradient1.png' },
-    { key: 'cpsongs', image: '/images/creative-house/projects/gradient1.png' },
+    { key: 'spout', image: '/images/creative-house/projects/gradient1.png', logo: '/images/solutions/spout.png', category: 'mobile' },
+    { key: 'efarm', image: '/images/creative-house/projects/gradient2.png', logo: '/images/solutions/e_farm.png', category: 'web' },
+    { key: 'cpsongs', image: '/images/creative-house/projects/gradient3.png', logo: '/images/solutions/CPsongs.png', category: 'web' },
   ];
 
   const projectTags = ['Website', 'Business', 'Template'];
@@ -67,8 +66,8 @@ export default function CreativeHouse() {
               </div>
             </div>
 
-            <div className="border border-white/20 p-3 mt-10 md:mt-16 bg-[#1A1A1A]">
-              <h2 className="text-lg md:text-xl text-center mb-2">
+            <div className="border border-white/20 p-8 mt-10 md:mt-16 bg-[#1A1A1A]">
+              <h2 className="text-xl md:text-xl text-center mb-2">
                 {t('banner.title_quote')}
               </h2>
               <p className="text-2xl md:text-4xl text-center">
@@ -79,15 +78,17 @@ export default function CreativeHouse() {
         </main>
       </div>
 
-      <div className="w-full bg-gray-400 h-[150px] md:h-[300px]"></div>
+      <div className="w-full bg-gray-400 h-[180px] md:h-[300px]"></div>
 
       {/* Services */}
-      <section className="bg-black py-16 md:py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             {t('services.title')}
           </h2>
-          <p className="max-w-2xl mx-auto text-white/70">{t('services.description')}</p>
+          <p className="max-w-2xl mx-auto text-xl text-start text-white">
+            {t('services.description')}
+          </p>
 
           {/* Diagrama - desktop */}
           <div className="hidden md:block relative w-full aspect-[992/448] mt-16">
@@ -196,61 +197,79 @@ export default function CreativeHouse() {
       </section>
 
       {/* Projects */}
-      <section className="bg-black py-16 md:py-24 px-6">
+      <section className="py-16 md:py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               {t('projects.title')}
             </h2>
-            <p className="max-w-2xl mx-auto text-white/70">{t('projects.description')}</p>
+            <p className="max-w-2xl mx-auto text-xl text-start text-white">{t('projects.description')}</p>
           </div>
 
           <div className="flex flex-col md:flex-row gap-8">
             <div className="flex flex-row md:flex-col gap-3 overflow-x-auto md:overflow-visible md:w-56 shrink-0">
               <button
                 onClick={() => setActiveCategory('all')}
-                className={`text-left text-sm px-4 py-2 border whitespace-nowrap hover:cursor-pointer ${activeCategory === 'all' ? 'bg-white text-black' : 'border-white/20 text-white/70'
+                className={`text-left text-sm px-4 py-2 border whitespace-nowrap hover:cursor-pointer ${activeCategory === 'all' ? 'bg-white text-black' : 'bg-black border-white/20 text-white/70'
                   }`}
               >
                 {t('projects.categories.all')}
               </button>
               <button
                 onClick={() => setActiveCategory('mobile')}
-                className={`text-left text-sm px-4 py-2 border whitespace-nowrap hover:cursor-pointer ${activeCategory === 'mobile' ? 'bg-white text-black' : 'border-white/20 text-white/70'
+                className={`text-left text-sm px-4 py-2 border whitespace-nowrap hover:cursor-pointer ${activeCategory === 'mobile' ? 'bg-white text-black' : 'bg-black border-white/20 text-white/70'
                   }`}
               >
                 {t('projects.categories.mobile')}
               </button>
+              <button
+                onClick={() => setActiveCategory('web')}
+                className={`text-left text-sm px-4 py-2 border whitespace-nowrap hover:cursor-pointer ${activeCategory === 'web' ? 'bg-white text-black' : 'bg-black border-white/20 text-white/70'
+                  }`}
+              >
+                {t('projects.categories.web')}
+              </button>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
-              {projects.map((project) => (
-                <div key={project.key} className="border border-white/10">
-                  <div className="relative aspect-[4/3] w-full">
-                    <Image
-                      src={project.image}
-                      alt={t(`projects.items.${project.key}.title`)}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <div className="flex flex-row gap-3 mb-3">
-                      {projectTags.map((tag) => (
-                        <span key={tag} className="text-xs text-white/50">
-                          {tag}
-                        </span>
-                      ))}
+              {projects
+                .filter((project) => activeCategory === 'all' || project.category === activeCategory)
+                .map((project) => (
+                  <div key={project.key} className="">
+                    <div className="relative aspect-[4/3] w-full">
+                      <Image
+                        src={project.image}
+                        alt={t(`projects.items.${project.key}.title`)}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <Image
+                          src={project.logo}
+                          alt={`${t(`projects.items.${project.key}.title`)} logo`}
+                          width={140}
+                          height={140}
+                          className="object-contain w-1/3 h-auto"
+                        />
+                      </div>
                     </div>
-                    <h3 className="text-lg font-bold mb-2">
-                      {t(`projects.items.${project.key}.title`)}
-                    </h3>
-                    <p className="text-sm text-white/60">
-                      {t(`projects.items.${project.key}.description`)}
-                    </p>
+                    <div className="py-4">
+                      <div className="flex flex-row gap-3 mb-3 bg-black/50">
+                        {projectTags.map((tag) => (
+                          <span key={tag} className="text-xs text-white/50 border-r border-gray-500 py-1 px-2">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <h3 className="text-lg font-bold mb-2">
+                        {t(`projects.items.${project.key}.title`)}
+                      </h3>
+                      <p className="text-sm text-white/60">
+                        {t(`projects.items.${project.key}.description`)}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </div>
@@ -274,8 +293,8 @@ export default function CreativeHouse() {
             <p className="font-medium mb-8">{t('cta.highlight')}</p>
 
             <div className="flex justify-center">
-              <div className="relative w-fit">
-                <div className="absolute inset-0 border bg-[#F2EFEF] opacity-50 border-white/30 translate-x-2 translate-y-2 -z-10" />
+              <div className="relative w-fit isolate">
+                <div className="absolute inset-0 border border-white/30 bg-[#F2EFEF] opacity-50 translate-x-2 translate-y-2 -z-10" />
                 <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4">
                   {t('cta.button')}
                   <Image
