@@ -9,53 +9,53 @@
     },
     "mission": {
       "name": "Our Mission",
-      "title": "Our core mission",
-      "description": "On our journey, we embrace complexity as a challenge, seeking to unravel intricate enigmas with accurate and accessible technological solutions. We believe that true innovation lies in the ability to simplify the intricate, and it is this belief that drives our mission: to develop tools that transform complex problems into simple solutions, making the world more accessible and efficient.",
+      "title": "Technology with purpose",
+      "description": "At CPresolver, we develop technological solutions designed to solve real problems and create meaningful value. Our mission is to transform complex challenges into practical, accessible and scalable products that help people and organizations move forward.",
       "button": "Learn more"
     },
     "story": {
       "name": "Our Story",
-      "title": "Our temporal progress",
-      "description": "From our humble beginnings to becoming a leader in our field, our story is one of passion, dedication, and relentless pursuit of excellence.",
+      "title": "Built around solving problems",
+      "description": "CPresolver was created from the belief that technology can do more than automate processes. It can create opportunities, simplify complexity and change the way people interact with the world. We started with the ambition to build meaningful technological products and continue to grow through ideas, experimentation and new challenges.",
       "button": "Learn more"
     },
     "target": {
-      "name": "Our target",
-      "title": "Our target",
-      "description": "From our humble beginnings to becoming a leader in our field, our story is one of passion, dedication, and relentless pursuit of excellence.",
+      "name": "Our Purpose",
+      "title": "Creating technology that moves people forward",
+      "description": "Our goal is to build products and technological solutions that respond to real needs and create long-term impact. We explore new ideas, technologies and possibilities to develop solutions that are useful today and prepared for tomorrow.",
       "button": "Learn more"
     },
     "solution": {
-      "name": "Our solution",
+      "name": "Our Solutions",
       "title": "Why choose our solutions?",
       "categories": {
         "category1": {
-          "title": "Tecnologic Innovation",
-          "description": "We are committed to staying at the forefront of technological advancements, continuously seeking innovative solutions that address the evolving needs of our clients."
+          "title": "Innovation",
+          "description": "We explore technology with curiosity and purpose, constantly looking for better ways to solve problems and create new possibilities."
         },
         "category2": {
-          "title": "Quality",
-          "description": "We prioritize quality in every aspect of our work, ensuring that our solutions meet the highest standards and deliver exceptional value to our clients."
+          "title": "Purposeful Technology",
+          "description": "We believe technology should create real value. Every solution begins with understanding a problem and building something meaningful around it."
         },
         "category3": {
-          "title": "Customer-Centric Approach",
-          "description": "We place our clients at the center of everything we do, striving to understand their unique challenges and providing tailored solutions that drive their success."
+          "title": "Continuous Evolution",
+          "description": "Technology never stands still, and neither do we. We continuously learn, experiment and improve our products to remain ready for new challenges."
         }
       },
       "button": "Learn more"
     },
     "message": {
-      "title": "< Message from our COO >",
-      "greeting": "Caros amigos e parceiros,",
-      "paragraph1": "É com grande entusiasmo que os saúdo em nome da C.Presolver. Desde o início, temos nos dedicado a transformar desafios em oportunidades por meio da tecnologia.",
-      "paragraph2": "Vocês são mais do que clientes ou parceiros — são visionários que compartilham conosco a paixão por inovação. Essa conexão nos inspira a ir além todos os dias.",
-      "paragraph3": "Na C.Presolver, buscamos mais do que oferecer soluções: queremos construir relações sólidas, baseadas na confiança, na excelência e no compromisso com vocês.",
-      "paragraph4": "Agradeço sinceramente por estarem conosco nessa jornada. Juntos, podemos alcançar grandes conquistas e moldar um futuro melhor.",
-      "acknowledgment": "Muito obrigado pela confiança!",
+      "title": "< A message from our COO >",
+      "greeting": "Dear friends, partners and visitors,",
+      "paragraph1": "It is with great enthusiasm that I welcome you to CPresolver. From the beginning, our ambition has been to create technology that goes beyond functionality and contributes to solving meaningful challenges.",
+      "paragraph2": "We believe that every challenge can become an opportunity when curiosity, creativity and technology work together. This belief is what drives us to explore ideas, develop products and continuously look for better solutions.",
+      "paragraph3": "CPresolver is still evolving, but our direction is clear: to build technology with purpose and create solutions capable of generating real value.",
+      "paragraph4": "Thank you for being part of this journey. Whether you are a client, partner, collaborator or simply someone interested in what we are building, we are excited to have you with us as we continue to grow.",
+      "acknowledgment": "Thank you for believing in the journey.",
       "from": "— Ariel A. Chama, COO"
     },
     "solutions": {
-      "title": "Perhaps you know"
+      "title": "Discover our solutions"
     }
   },
   "CreativeHouse": {
@@ -68,45 +68,45 @@
     },
     "services": {
       "title": "Our Services",
-      "description": "Your idea deserves more than just existing in your imagination. At the Creative House, it takes shape (digitally or physically), built to last.",
+      "description": "Creative House is the consulting and development division of CPresolver. We work with businesses, entrepreneurs and organizations to transform ideas and challenges into practical, scalable technological solutions.",
       "categories": {
         "category1": {
           "title": "Web Development",
-          "description": "We develop modern, secure, and scalable websites, from institutional sites to complex platforms, always prioritizing performance and user experience."
+          "description": "We design and develop modern, secure and scalable websites and web platforms, from institutional websites to more complex digital products."
         },
         "category2": {
           "title": "Mobile Development",
-          "description": "We build native and cross-platform mobile apps focused on smooth performance, intuitive design, and seamless integration with your existing systems."
+          "description": "We create mobile applications designed around performance, usability and the needs of your users and business."
         },
         "category3": {
           "title": "Integrations and APIs",
-          "description": "We connect your tools and platforms through robust, well-documented APIs, streamlining workflows and enabling your systems to communicate effortlessly."
+          "description": "We connect systems, platforms and digital tools through reliable integrations and APIs that help automate processes and improve communication between technologies."
         },
         "category4": {
           "title": "Cloud & DevOps",
-          "description": "We design and manage scalable cloud infrastructure with automated deployment pipelines, ensuring reliability, security, and continuous delivery."
+          "description": "We help design and manage cloud infrastructure and deployment processes focused on scalability, reliability and efficient software delivery."
         },
         "category5": {
           "title": "Architecture and Interior Design",
-          "description": "We plan functional, aesthetic spaces that blend form and purpose, translating your vision into detailed architectural and interior design projects."
+          "description": "Through our multidisciplinary approach, we develop functional and well-planned architectural and interior design solutions that bring ideas into physical spaces."
         },
         "category6": {
           "title": "Custom Software",
-          "description": "We build tailor-made software solutions designed around your specific processes, replacing generic tools with systems built exactly for your needs."
+          "description": "We build software around your specific needs, processes and objectives instead of forcing your business to adapt to generic solutions."
         },
         "category7": {
           "title": "UI/UX Design",
-          "description": "We craft intuitive, visually compelling interfaces grounded in user research, ensuring every interaction feels natural and every screen tells a clear story."
+          "description": "We design clear and intuitive digital experiences that connect user needs with business objectives."
         },
         "category8": {
           "title": "Maintenance and Support",
-          "description": "We provide ongoing monitoring, updates, and technical support to keep your systems running smoothly, secure, and up to date long after launch."
+          "description": "We provide ongoing technical support, maintenance and improvements to help keep your digital solutions secure, reliable and evolving."
         }
       }
     },
     "projects": {
       "title": "Our Projects",
-      "description": "Your idea deserves more than just existing in your imagination. At the Creative House, it takes shape (digitally or physically), built to last.",
+      "description": "A selection of products, ideas and technological solutions developed as part of the CPresolver ecosystem.",
       "categories": {
         "all": "All Projects",
         "mobile": "Mobile Development",
@@ -115,15 +115,15 @@
       "items": {
         "spout": {
           "title": "Spout",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          "description": "Spout connects water suppliers with the people and businesses who need them, making it simple to find, request and manage water delivery through a single platform."
         },
         "efarm": {
           "title": "E-farm",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          "description": "E-Farm connects agricultural sellers directly with buyers, creating a straightforward marketplace for fresh produce and farm goods, from the field to the customer."
         },
         "cpsongs": {
           "title": "CPsongs",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+          "description": "CPSongs is a music streaming platform built to give artists and listeners a modern, intuitive space to discover, share and enjoy music."
         }
       }
     },
@@ -136,10 +136,10 @@
     "modal": {
       "title": "Tell us about your project",
       "checklist": {
-        "item1": "We will respond to you within 12 hours",
-        "item2": "Lorem ipsum dolor sit amet, consetetur sadipscing",
-        "item3": "Lorem ipsum dolor sit amet, consetetur sadipscing",
-        "item4": "Lorem ipsum dolor sit amet, consetetur sadipscing"
+        "item1": "Tell us about your idea, challenge or business need",
+        "item2": "We will review your project and understand your objectives",
+        "item3": "We will discuss the technologies and solutions that best fit your needs",
+        "item4": "Together, we can define the next steps toward building your solution"
       },
       "serviceTitle": "Service",
       "fullName": "Full name*",
@@ -148,17 +148,21 @@
       "emailPlaceholder": "your@email.com",
       "projectDetails": "Project details*",
       "projectDetailsPlaceholder": "Tell us about your project...",
-      "attach": "Attach a file(optional)",
-      "attachPlaceholder": "Choose a file or drag and drop here",
-      "submit": "Submit inquiry",
-      "contactInfoTitle": "Contact info",
-      "close": "Close"
+      "attach": "Attach a file (optional)",
+      "attachPlaceholder": "Choose a file or drag and drop it here",
+      "submit": "Send inquiry",
+      "contactInfoTitle": "Contact information",
+      "close": "Close",
+      "success": {
+        "title": "Message sent!",
+        "message": "Thank you for reaching out. We'll get back to you shortly."
+      }
     },
     "footer": {
       "hire": {
-        "title": "Do you want to hire our team?",
-        "button": "About Us",
-        "subtitle": "Let's schedule a coffee meeting!"
+        "title": "Do you have a project in mind?",
+        "button": "Work with us",
+        "subtitle": "Let's talk about how we can build your solution."
       },
       "company": {
         "title": "Company",
@@ -170,12 +174,12 @@
         ]
       },
       "services": {
-        "title": "Services",
+        "title": "Creative House",
         "items": [
           "Software Development",
           "Mobile Applications",
-          "Artificial Intelligence",
-          "Digital Consulting"
+          "Technology Consulting",
+          "Digital Solutions"
         ]
       },
       "products": {
@@ -199,66 +203,111 @@
   },
   "Footer": {
     "hire": {
-      "title": "Do you want to hire our team?",
-      "button": "See our products",
-      "subtitle": "Lets schedule a coffee meeting!"
+      "title": "Do you have a project in mind?",
+      "button": "Explore our products",
+      "subtitle": "Discover the technology we are building."
     },
     "company": {
       "title": "Company",
       "items": [
-        "About us",
-        "Mission and Vision",
-        "Our team",
-        "Careers"
+        {
+          "label": "About us",
+          "href": "/"
+        },
+        {
+          "label": "Mission and Vision",
+          "href": "/#mission"
+        },
+        {
+          "label": "Our team",
+          "href": "/creative-house#team"
+        },
+        {
+          "label": "Careers",
+          "href": "/"
+        }
       ]
     },
     "services": {
       "title": "Services",
       "items": [
-        "Software Development",
-        "Mobile Applications",
-        "Artificial intelligence",
-        "Digital Consulting"
+        {
+          "label": "Software Development",
+          "href": "/creative-house#services"
+        },
+        {
+          "label": "Mobile Applications",
+          "href": "/creative-house#services"
+        },
+        {
+          "label": "Technology Consulting",
+          "href": "/creative-house#services"
+        },
+        {
+          "label": "Digital Consulting",
+          "href": "/creative-house#services"
+        }
       ]
     },
     "products": {
       "title": "Products",
       "items": [
-        "Spout",
-        "E-Farm",
-        "CPsongs"
+        {
+          "label": "Spout",
+          "href": "/creative-house#projects"
+        },
+        {
+          "label": "E-Farm",
+          "href": "/creative-house#projects"
+        },
+        {
+          "label": "CPsongs",
+          "href": "/creative-house#projects"
+        }
       ]
     },
     "bottom": {
       "copyright": "© CPresolver 2026",
       "links": [
-        "Sitemap",
-        "Contact CPresolver",
-        "Privacy Policy",
-        "Terms and conditions"
+        {
+          "label": "Sitemap",
+          "href": "/"
+        },
+        {
+          "label": "Contact CPresolver",
+          "href": "/"
+        },
+        {
+          "label": "Privacy Policy",
+          "href": "/"
+        },
+        {
+          "label": "Terms and conditions",
+          "href": "/"
+        }
       ]
     }
   },
   "Contact": {
     "title": "Let's talk",
-    "description": "Have a project in mind or just want to say hello? Fill out the form and we'll get back to you shortly.",
+    "description": "Whether you have a question about CPresolver, one of our products or a project you would like to discuss with Creative House, we would be happy to hear from you.",
     "form": {
       "name": "Name",
       "namePlaceholder": "Your name",
       "email": "Email",
       "emailPlaceholder": "your@email.com",
       "message": "Message",
-      "messagePlaceholder": "Tell us about your project...",
+      "messagePlaceholder": "How can we help you?",
       "submit": "Send message"
     },
     "info": {
-      "title": "Contact info",
+      "title": "Contact information",
       "email": "cpresolver@gmail.com",
       "phone": "+351 928 067 407",
       "address": "Lisbon, Portugal"
     },
     "social": {
-      "title": "Follow us"
+      "title": "Follow CPresolver"
     }
   }
 }

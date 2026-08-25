@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useTranslations } from 'next-intl'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import ContactModal from '@/components/ContactModal'
+import Link from "next/link"
 
 export default function Home() {
   const t = useTranslations('Home');
@@ -27,7 +27,9 @@ export default function Home() {
                 <div className="relative w-fit group">
                   <div className="absolute inset-0 border bg-[#F2EFEF] opacity-50 border-white/30 translate-x-2 translate-y-2 -z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1" />
                   <button className="bg-white hover:bg-gray-200 hover:cursor-pointer text-black font-medium py-2 px-4 transition-colors duration-300">
-                    {t('banner.button')}
+                    <Link href="/creative-house#projects">
+                      {t('banner.button')}
+                    </Link>
                     <Image
                       src="/images/icons/arrow_forward.png"
                       alt="Arrow Right"
@@ -63,7 +65,7 @@ export default function Home() {
         </main >
       </div >
 
-      <div className="flex flex-col md:flex-row ">
+      <div className="flex flex-col md:flex-row " id="mission">
         <div className="w-full md:w-1/2 overflow-hidden">
           <Image
             src="/images/original-ae72b4ea7eed5c28c8aeb6d5153ab50f.png"
@@ -240,33 +242,6 @@ export default function Home() {
           />
         </div>
       </div>
-
-      <section className="p-6 md:p-24 bg-[url(/images/image_with_bright_loss.png)] bg-cover bg-center">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="w-full md:w-1/2">
-              <h2 className="text-2xl md:text-3xl mb-6 ml-0 md:ml-10">{t('message.title')}</h2>
-              <p className="mb-4">{t('message.paragraph1')}</p>
-              <p className="mb-4">{t('message.paragraph2')}</p>
-              <p className="mb-4">{t('message.paragraph3')}</p>
-              <p className="mb-4">{t('message.paragraph4')}</p>
-              <p className="mb-4">{t('message.acknowledgment')}</p>
-              <p>{t('message.from')}</p>
-            </div>
-
-            <div className="w-full md:w-1/2">
-              <Image
-                src="/images/message.png"
-                alt="Banner"
-                width={500}
-                height={300}
-                className="w-full transition-transform duration-500 hover:scale-[1.02]"
-              />
-            </div>
-          </div>
-        </div>
-      </section >
-
 
       <section className="max-w-6xl mx-auto px-6 md:px-0">
         <div className="my-10 md:my-20 border border-white/20 py-5 px-6 md:px-[100px] w-full bg-[#1a1a1a] transition-colors duration-300 hover:border-white/30">

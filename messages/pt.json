@@ -9,20 +9,20 @@
     },
     "mission": {
       "name": "A nossa missão",
-      "title": "A nossa missão principal",
-      "description": "Na nossa jornada, encaramos a complexidade como um desafio, procurando resolver problemas complexos através de soluções tecnológicas precisas e acessíveis. Acreditamos que a verdadeira inovação está na capacidade de simplificar o que é complexo, e é essa convicção que orienta a nossa missão: desenvolver ferramentas que transformam desafios complexos em soluções simples, tornando o mundo mais acessível e eficiente.",
+      "title": "Tecnologia com propósito",
+      "description": "Na CPresolver, desenvolvemos soluções tecnológicas pensadas para resolver problemas reais e criar valor genuíno. A nossa missão é transformar desafios complexos em produtos práticos, acessíveis e escaláveis que ajudam pessoas e organizações a avançar.",
       "button": "Saber mais"
     },
     "story": {
       "name": "A nossa história",
-      "title": "A nossa evolução",
-      "description": "Desde os nossos humildes começos até nos tornarmos uma referência na nossa área, a nossa história é marcada pela paixão, dedicação e busca contínua pela excelência.",
+      "title": "Construída à volta de resolver problemas",
+      "description": "A CPresolver nasceu da convicção de que a tecnologia pode ir além de automatizar processos. Pode criar oportunidades, simplificar a complexidade e mudar a forma como as pessoas interagem com o mundo. Começámos com a ambição de construir produtos tecnológicos com significado, e continuamos a crescer através de ideias, experimentação e novos desafios.",
       "button": "Saber mais"
     },
     "target": {
-      "name": "O nosso objetivo",
-      "title": "O nosso objetivo",
-      "description": "Trabalhamos para criar soluções que impulsionam pessoas e empresas, ajudando-as a enfrentar desafios e a alcançar o seu máximo potencial através da tecnologia.",
+      "name": "O nosso propósito",
+      "title": "Criar tecnologia que faz as pessoas avançar",
+      "description": "O nosso objetivo é construir produtos e soluções tecnológicas que respondem a necessidades reais e criam impacto a longo prazo. Exploramos novas ideias, tecnologias e possibilidades para desenvolver soluções que sejam úteis hoje e estejam preparadas para o amanhã.",
       "button": "Saber mais"
     },
     "solution": {
@@ -30,32 +30,32 @@
       "title": "Porquê escolher as nossas soluções?",
       "categories": {
         "category1": {
-          "title": "Inovação Tecnológica",
-          "description": "Mantemo-nos na vanguarda da tecnologia, desenvolvendo continuamente soluções inovadoras que respondem às necessidades em constante evolução dos nossos clientes."
+          "title": "Inovação",
+          "description": "Exploramos a tecnologia com curiosidade e propósito, procurando constantemente melhores formas de resolver problemas e criar novas possibilidades."
         },
         "category2": {
-          "title": "Qualidade",
-          "description": "A qualidade está presente em tudo o que fazemos, garantindo soluções que cumprem os mais elevados padrões e proporcionam valor real aos nossos clientes."
+          "title": "Tecnologia com propósito",
+          "description": "Acreditamos que a tecnologia deve criar valor real. Cada solução começa por compreender um problema e construir algo com significado à sua volta."
         },
         "category3": {
-          "title": "Foco no Cliente",
-          "description": "Colocamos os nossos clientes no centro de tudo, procurando compreender os seus desafios e criar soluções personalizadas que contribuam para o seu sucesso."
+          "title": "Evolução contínua",
+          "description": "A tecnologia nunca para, e nós também não. Aprendemos, experimentamos e melhoramos continuamente os nossos produtos para estarmos preparados para novos desafios."
         }
       },
       "button": "Saber mais"
     },
     "message": {
-      "title": "< Mensagem do nosso COO >",
-      "greeting": "Caros amigos e parceiros,",
-      "paragraph1": "É com enorme entusiasmo que vos dou as boas-vindas em nome da C.Presolver. Desde o primeiro dia, dedicamo-nos a transformar desafios em oportunidades através da tecnologia.",
-      "paragraph2": "Vocês são muito mais do que clientes ou parceiros — são visionários que partilham connosco a paixão pela inovação. É essa ligação que nos inspira a superar expectativas todos os dias.",
-      "paragraph3": "Na C.Presolver, queremos ir além de desenvolver soluções. O nosso objetivo é construir relações duradouras, assentes na confiança, excelência e compromisso.",
-      "paragraph4": "Agradeço sinceramente por fazerem parte desta jornada. Juntos, podemos alcançar grandes conquistas e construir um futuro melhor.",
-      "acknowledgment": "Muito obrigado pela confiança!",
+      "title": "< Uma mensagem do nosso COO >",
+      "greeting": "Caros amigos, parceiros e visitantes,",
+      "paragraph1": "É com grande entusiasmo que vos dou as boas-vindas à CPresolver. Desde o início, a nossa ambição tem sido criar tecnologia que vá além da funcionalidade e contribua para resolver desafios com significado.",
+      "paragraph2": "Acreditamos que cada desafio pode tornar-se uma oportunidade quando a curiosidade, a criatividade e a tecnologia trabalham em conjunto. É essa convicção que nos motiva a explorar ideias, desenvolver produtos e procurar continuamente melhores soluções.",
+      "paragraph3": "A CPresolver está ainda em evolução, mas o nosso caminho é claro: construir tecnologia com propósito e criar soluções capazes de gerar valor real.",
+      "paragraph4": "Obrigado por fazerem parte desta jornada. Seja como cliente, parceiro, colaborador ou simplesmente alguém interessado no que estamos a construir, é com entusiasmo que vos temos connosco enquanto continuamos a crescer.",
+      "acknowledgment": "Obrigado por acreditarem nesta jornada.",
       "from": "— Ariel A. Chama, COO"
     },
     "solutions": {
-      "title": "Talvez conheça"
+      "title": "Descubra as nossas soluções"
     }
   },
   "CreativeHouse": {
@@ -68,61 +68,62 @@
     },
     "services": {
       "title": "Os nossos serviços",
-      "description": "A sua ideia merece mais do que existir apenas na imaginação. Na Creative House, damos-lhe forma — digital ou física — criando soluções pensadas para durar.",
+      "description": "A Creative House é a divisão de consultoria e desenvolvimento da CPresolver. Trabalhamos com empresas, empreendedores e organizações para transformar ideias e desafios em soluções tecnológicas práticas e escaláveis.",
       "categories": {
         "category1": {
           "title": "Desenvolvimento Web",
-          "description": "Desenvolvemos websites modernos, seguros e escaláveis, desde páginas institucionais até plataformas complexas, sempre com foco no desempenho e na experiência do utilizador."
+          "description": "Concebemos e desenvolvemos websites e plataformas web modernas, seguras e escaláveis, desde sites institucionais até produtos digitais mais complexos."
         },
         "category2": {
           "title": "Desenvolvimento Mobile",
-          "description": "Criamos aplicações móveis nativas e multiplataforma, com elevado desempenho, design intuitivo e integração perfeita com os seus sistemas."
+          "description": "Criamos aplicações móveis pensadas em torno do desempenho, da usabilidade e das necessidades dos seus utilizadores e do seu negócio."
         },
         "category3": {
           "title": "Integrações e APIs",
-          "description": "Ligamos ferramentas e plataformas através de APIs robustas e bem documentadas, automatizando processos e permitindo uma comunicação eficiente entre sistemas."
+          "description": "Ligamos sistemas, plataformas e ferramentas digitais através de integrações e APIs fiáveis, que ajudam a automatizar processos e a melhorar a comunicação entre tecnologias."
         },
         "category4": {
           "title": "Cloud & DevOps",
-          "description": "Projetamos e gerimos infraestruturas cloud escaláveis, com pipelines de implementação automatizados que garantem segurança, fiabilidade e entrega contínua."
+          "description": "Ajudamos a desenhar e gerir infraestruturas cloud e processos de deployment focados em escalabilidade, fiabilidade e entrega eficiente de software."
         },
         "category5": {
           "title": "Arquitetura e Design de Interiores",
-          "description": "Concebemos espaços funcionais e esteticamente equilibrados, transformando a sua visão em projetos detalhados de arquitetura e design de interiores."
+          "description": "Através da nossa abordagem multidisciplinar, desenvolvemos soluções de arquitetura e design de interiores funcionais e bem planeadas, que transformam ideias em espaços físicos."
         },
         "category6": {
           "title": "Software Personalizado",
-          "description": "Desenvolvemos soluções de software à medida dos seus processos, substituindo ferramentas genéricas por sistemas criados especificamente para o seu negócio."
+          "description": "Construímos software à volta das suas necessidades, processos e objetivos específicos, em vez de obrigar o seu negócio a adaptar-se a soluções genéricas."
         },
         "category7": {
           "title": "Design UI/UX",
-          "description": "Criamos interfaces intuitivas e visualmente apelativas, baseadas na experiência do utilizador, garantindo interações naturais e uma comunicação clara."
+          "description": "Desenhamos experiências digitais claras e intuitivas, que ligam as necessidades dos utilizadores aos objetivos do negócio."
         },
         "category8": {
           "title": "Manutenção e Suporte",
-          "description": "Prestamos monitorização contínua, atualizações e suporte técnico para manter os seus sistemas seguros, atualizados e a funcionar sem interrupções."
+          "description": "Prestamos suporte técnico contínuo, manutenção e melhorias para manter as suas soluções digitais seguras, fiáveis e em constante evolução."
         }
       }
     },
     "projects": {
       "title": "Os nossos projetos",
-      "description": "Cada projeto representa uma ideia transformada em realidade através da inovação, criatividade e excelência técnica.",
+      "description": "Uma seleção de produtos, ideias e soluções tecnológicas desenvolvidas como parte do ecossistema CPresolver.",
       "categories": {
         "all": "Todos os Projetos",
-        "mobile": "Desenvolvimento Mobile"
+        "mobile": "Desenvolvimento Mobile",
+        "web": "Desenvolvimento Web"
       },
       "items": {
         "spout": {
           "title": "Spout",
-          "description": "Uma plataforma moderna desenvolvida para simplificar processos e proporcionar uma experiência intuitiva aos utilizadores."
+          "description": "O Spout liga fornecedores de água às pessoas e empresas que precisam deles, tornando simples encontrar, pedir e gerir a entrega de água através de uma única plataforma."
         },
         "efarm": {
           "title": "E-Farm",
-          "description": "Uma solução tecnológica criada para impulsionar a transformação digital no setor agrícola."
+          "description": "O E-Farm liga vendedores agrícolas diretamente aos compradores, criando um mercado direto para produtos frescos e bens agrícolas, do campo até ao cliente."
         },
         "cpsongs": {
           "title": "CPSongs",
-          "description": "Uma plataforma inovadora dedicada à gestão e distribuição de conteúdos musicais."
+          "description": "O CPSongs é uma plataforma de streaming de música criada para dar a artistas e ouvintes um espaço moderno e intuitivo para descobrir, partilhar e desfrutar de música."
         }
       }
     },
@@ -135,10 +136,10 @@
     "modal": {
       "title": "Conte-nos sobre o seu projeto",
       "checklist": {
-        "item1": "Responderemos no prazo de 12 horas",
-        "item2": "Lorem ipsum dolor sit amet, consetetur sadipscing",
-        "item3": "Lorem ipsum dolor sit amet, consetetur sadipscing",
-        "item4": "Lorem ipsum dolor sit amet, consetetur sadipscing"
+        "item1": "Conte-nos sobre a sua ideia, desafio ou necessidade de negócio",
+        "item2": "Vamos analisar o seu projeto e compreender os seus objetivos",
+        "item3": "Vamos discutir as tecnologias e soluções que melhor se adequam às suas necessidades",
+        "item4": "Juntos, definimos os próximos passos para construir a sua solução"
       },
       "serviceTitle": "Serviço",
       "fullName": "Nome completo*",
@@ -151,13 +152,17 @@
       "attachPlaceholder": "Escolha um ficheiro ou arraste e solte aqui",
       "submit": "Enviar pedido",
       "contactInfoTitle": "Informações de contacto",
-      "close": "Fechar"
+      "close": "Fechar",
+      "success": {
+        "title": "Mensagem enviada!",
+        "message": "Obrigado pelo contacto. Entraremos em contacto consigo brevemente."
+      }
     },
     "footer": {
       "hire": {
-        "title": "Pretende contratar a nossa equipa?",
-        "button": "Sobre Nós",
-        "subtitle": "Vamos marcar um café!"
+        "title": "Tem um projeto em mente?",
+        "button": "Trabalhe connosco",
+        "subtitle": "Vamos falar sobre como podemos construir a sua solução."
       },
       "company": {
         "title": "Empresa",
@@ -169,12 +174,12 @@
         ]
       },
       "services": {
-        "title": "Serviços",
+        "title": "Creative House",
         "items": [
           "Desenvolvimento de Software",
           "Aplicações Móveis",
-          "Inteligência Artificial",
-          "Consultoria Digital"
+          "Consultoria Tecnológica",
+          "Soluções Digitais"
         ]
       },
       "products": {
@@ -198,56 +203,101 @@
   },
   "Footer": {
     "hire": {
-      "title": "Pretende contratar a nossa equipa?",
-      "button": "Ver os nossos produtos",
-      "subtitle": "Vamos marcar um café!"
+      "title": "Tem um projeto em mente?",
+      "button": "Explore os nossos produtos",
+      "subtitle": "Descubra a tecnologia que estamos a construir."
     },
     "company": {
       "title": "Empresa",
       "items": [
-        "Sobre Nós",
-        "Missão e Visão",
-        "A Nossa Equipa",
-        "Carreiras"
+        {
+          "label": "Sobre Nós",
+          "href": "/"
+        },
+        {
+          "label": "Missão e Visão",
+          "href": "/#mission"
+        },
+        {
+          "label": "A Nossa Equipa",
+          "href": "/creative-house#services"
+        },
+        {
+          "label": "Carreiras",
+          "href": "/"
+        }
       ]
     },
     "services": {
       "title": "Serviços",
       "items": [
-        "Desenvolvimento de Software",
-        "Aplicações Móveis",
-        "Inteligência Artificial",
-        "Consultoria Digital"
+        {
+          "label": "Desenvolvimento de Software",
+          "href": "/creative-house#services"
+        },
+        {
+          "label": "Aplicações Móveis",
+          "href": "/creative-house#services"
+        },
+        {
+          "label": "Consultoria Tecnológica",
+          "href": "/creative-house#services"
+        },
+        {
+          "label": "Consultoria Digital",
+          "href": "/creative-house#services"
+        }
       ]
     },
     "products": {
       "title": "Produtos",
       "items": [
-        "Spout",
-        "E-Farm",
-        "CPSongs"
+        {
+          "label": "Spout",
+          "href": "/creative-house#services"
+        },
+        {
+          "label": "E-Farm",
+          "href": "/creative-house#projects"
+        },
+        {
+          "label": "CPSongs",
+          "href": "/creative-house#projects"
+        }
       ]
     },
     "bottom": {
       "copyright": "© C.Presolver 2026",
       "links": [
-        "Mapa do Site",
-        "Contactar a C.Presolver",
-        "Política de Privacidade",
-        "Termos e Condições"
+        {
+          "label": "Mapa do Site",
+          "href": "/"
+        },
+        {
+          "label": "Contactar a C.Presolver",
+          "href": "/"
+        },
+        {
+          "label": "Política de Privacidade",
+          "href": "/"
+        },
+        {
+          "label": "Termos e Condições",
+          "href": "/"
+        }
       ]
     }
   },
   "Contact": {
     "title": "Vamos conversar",
-    "description": "Tem um projeto em mente ou apenas quer falar connosco? Preencha o formulário e entraremos em contacto consigo o mais breve possível.",
+    "description": "Tem uma questão sobre a CPresolver, um dos nossos produtos ou um projeto que gostaria de discutir com a Creative House? Ficaremos muito satisfeitos em ouvi-lo.",
     "form": {
       "name": "Nome",
       "namePlaceholder": "O seu nome",
       "email": "Email",
       "emailPlaceholder": "o.seu@email.com",
       "message": "Mensagem",
-      "messagePlaceholder": "Fale-nos sobre o seu projeto...",
+      "messagePlaceholder": "Como podemos ajudar?",
       "submit": "Enviar mensagem"
     },
     "info": {
@@ -257,7 +307,7 @@
       "address": "Lisboa, Portugal"
     },
     "social": {
-      "title": "Siga-nos"
+      "title": "Siga a CPresolver"
     }
   }
 }

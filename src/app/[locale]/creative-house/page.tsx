@@ -100,7 +100,7 @@ export default function CreativeHouse() {
         </main>
       </div>
 
-      <div>
+      <div id="team">
         <Image
           src="/images/creative-house/card_employees.png"
           alt="Banner Bottom"
@@ -111,7 +111,7 @@ export default function CreativeHouse() {
       </div>
 
       {/* Services */}
-      <section className="py-16 md:py-24 px-6">
+      <section className="py-16 md:py-24 px-6" id="services">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             {t('services.title')}
@@ -173,11 +173,11 @@ export default function CreativeHouse() {
           {/* Diagrama - mobile (lista simples) */}
           <div className="md:hidden flex flex-col gap-3 mt-10 text-left">
             <Image
-              src="/images/services_illustration.png"
+              src="/images/creative-house/services_illustration_mobile.png"
               alt="Services"
               width={264}
               height={405}
-              className="w-40 sm:w-48 h-auto mx-auto mb-4 opacity-90"
+              className="w-[400px] sm:w-48 h-auto mx-auto mb-4 opacity-90"
             />
             {services.map((service) => {
               const description = t(`services.categories.${service.key}.description`);
@@ -209,7 +209,7 @@ export default function CreativeHouse() {
       </section>
 
       {/* Projects */}
-      <section className="py-16 md:py-24 px-6">
+      <section className="py-16 md:py-24 px-6" id="projects">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
