@@ -5,23 +5,45 @@ import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import ContactSection from '@/components/ContactSection'
+import ContactModal from '@/components/ContactModal'
 
 export default function CreativeHouse() {
   const t = useTranslations('CreativeHouse');
   const [activeCategory, setActiveCategory] = useState('all');
   const [activeService, setActiveService] = useState('category1');
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
 
+  // Categorias SEM linha na imagem: posição normal (canto superior-esquerdo da caixa = left/top).
+  // Categorias COM linha na imagem: left/top marcam o ponto exato onde a linha termina,
+  // e "anchor" define qual parte da caixa deve encostar nesse ponto.
+  //   anchor 'left'   -> ponto = meio da margem ESQUERDA da caixa (linha chega pela esquerda)
+  //   anchor 'right'  -> ponto = meio da margem DIREITA da caixa (linha chega pela direita)
+  //   anchor 'bottom' -> ponto = meio da margem INFERIOR da caixa (linha chega por baixo)
   const services = [
-    { key: 'category3', icon: '/images/icons/connect.png', left: '14.8%', top: '8%' },
-    { key: 'category4', icon: '/images/icons/cloud.png', left: '41.6%', top: '2%' },
-    { key: 'category5', icon: '/images/icons/architecture.png', left: '70%', top: '4%' },
-    { key: 'category2', icon: '/images/icons/mobile.png', left: '7.6%', top: '23%' },
-    { key: 'category1', icon: '/images/icons/web.png', left: '7.6%', top: '45%' },
-    { key: 'category6', icon: '/images/icons/icon_tech.png', left: '71%', top: '36%' },
-    { key: 'category7', icon: '/images/icons/design.png', left: '74.5%', top: '68%' },
-    { key: 'category8', icon: '/images/icons/icon_tech.png', left: '41%', top: '84%' },
+    { key: 'category3', icon: '/images/icons/connect.png', left: '12%', top: '10%' },
+    {
+      key: 'category4', icon: '/images/icons/cloud.png', left: '44%', top: '9%', anchor: 'left'
+    },
+    { key: 'category5', icon: '/images/icons/architecture.png', left: '88.90%', top: '17%', anchor: 'bottom' },
+    { key: 'category2', icon: '/images/icons/mobile.png', left: '2%', top: '29%' },
+    { key: 'category1', icon: '/images/icons/web.png', left: '25%', top: '80%', anchor: 'right' },
+    { key: 'category6', icon: '/images/icons/icon_tech.png', left: '80%', top: '47.2%' }, //cUSTOM SUPPORT
+    { key: 'category7', icon: '/images/icons/design.png', left: '86%', top: '88%' },
+    { key: 'category8', icon: '/images/icons/icon_tech.png', left: '65%', top: '114%', anchor: 'right' }, // Maintance and Support
   ];
+
+  const getConnectorTransform = (anchor?: string) => {
+    switch (anchor) {
+      case 'left':
+        return 'translateY(-50%)';
+      case 'right':
+        return 'translate(-100%, -50%)';
+      case 'bottom':
+        return 'translate(-50%, -100%)';
+      default:
+        return undefined;
+    }
+  };
 
   const projects = [
     { key: 'spout', image: '/images/creative-house/projects/gradient1.png', logo: '/images/solutions/spout.png', category: 'mobile' },
@@ -38,7 +60,7 @@ export default function CreativeHouse() {
         <main className="flex flex-1 w-full max-w-6xl flex-col items-center justify-between py-10 px-6 md:px-16 sm:items-start">
           <Navbar />
 
-          <div className="pb-10 pt-16 md:pb-20 md:pt-32 w-full">
+          <div className="pb-10 pt-16 md:pb-20 md:pt-32 w-full animate-[fadeIn_0.6s_ease-out]">
             <div className="flex flex-col md:flex-row justify-between items-center gap-8">
               <div>
                 <p className="mb-2 text-lg">{t('banner.title')}</p>
@@ -47,9 +69,9 @@ export default function CreativeHouse() {
                   {t('banner.description')}
                 </p>
 
-                <div className="relative w-fit">
-                  <div className="absolute inset-0 border border-white/30 bg-[#F2EFEF] opacity-50 translate-x-2 translate-y-2 -z-10" />
-                  <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4">
+                <div className="relative w-fit group">
+                  <div className="absolute inset-0 border border-white/30 bg-[#F2EFEF] opacity-50 translate-x-2 translate-y-2 -z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1" />
+                  <button className="bg-white hover:bg-gray-200 hover:cursor-pointer text-black font-medium py-2 px-4 transition-colors duration-300">
                     {t('banner.button')}
                   </button>
                 </div>
@@ -61,12 +83,12 @@ export default function CreativeHouse() {
                   alt="Banner Illustration"
                   width={400}
                   height={300}
-                  className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-full"
+                  className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-full transition-transform duration-500 hover:scale-[1.02]"
                 />
               </div>
             </div>
 
-            <div className="border border-white/20 p-8 mt-10 md:mt-16 bg-[#1A1A1A]">
+            <div className="border border-white/20 p-8 mt-10 md:mt-16 bg-[#1A1A1A] transition-colors duration-300 hover:border-white/30">
               <h2 className="text-xl md:text-xl text-center mb-2">
                 {t('banner.title_quote')}
               </h2>
@@ -78,7 +100,15 @@ export default function CreativeHouse() {
         </main>
       </div>
 
-      <div className="w-full bg-gray-400 h-[180px] md:h-[300px]"></div>
+      <div>
+        <Image
+          src="/images/creative-house/card_employees.png"
+          alt="Banner Bottom"
+          width={1920}
+          height={200}
+          className="w-full h-auto"
+        />
+      </div>
 
       {/* Services */}
       <section className="py-16 md:py-24 px-6">
@@ -92,38 +122,16 @@ export default function CreativeHouse() {
 
           {/* Diagrama - desktop */}
           <div className="hidden md:block relative w-full aspect-[992/448] mt-16">
-            <svg
-              viewBox="0 0 992 448"
-              className="absolute inset-0 w-full h-full z-0"
-              fill="none"
-            >
-              <line x1="220" y1="66" x2="330" y2="150" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
-              <line x1="486" y1="41" x2="400" y2="150" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
-              <line x1="740" y1="48" x2="580" y2="120" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
-              <line x1="218" y1="118" x2="325" y2="165" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
-              <line x1="218" y1="230" x2="325" y2="255" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
-              <line x1="706" y1="177" x2="628" y2="210" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
-              <line x1="740" y1="320" x2="578" y2="295" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
-              <line x1="483" y1="380" x2="578" y2="295" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
-
-              <circle cx="330" cy="150" r="3.5" fill="white" fillOpacity="0.7" />
-              <circle cx="400" cy="150" r="3.5" fill="white" fillOpacity="0.7" />
-              <circle cx="580" cy="120" r="3.5" fill="white" fillOpacity="0.7" />
-              <circle cx="325" cy="165" r="3.5" fill="white" fillOpacity="0.7" />
-              <circle cx="325" cy="255" r="3.5" fill="white" fillOpacity="0.7" />
-              <circle cx="628" cy="210" r="3.5" fill="white" fillOpacity="0.7" />
-              <circle cx="578" cy="295" r="3.5" fill="white" fillOpacity="0.7" />
-            </svg>
-
+            {/* Os caminhos (linhas) e os pontos já fazem parte desta imagem */}
             <div
               className="absolute z-0"
-              style={{ left: '32%', top: '20%', width: '36%' }}
+              style={{ left: '10%', top: '10%', width: '80%' }}
             >
               <Image
-                src="/images/creative-house/services_illustration.png"
+                src="/images/creative-house/services_illustration_desktop.png"
                 alt="Services"
-                width={340}
-                height={230}
+                width={700}
+                height={560}
                 className="w-full h-auto opacity-90"
               />
             </div>
@@ -138,11 +146,15 @@ export default function CreativeHouse() {
                 <button
                   key={service.key}
                   onClick={() => setActiveService(service.key)}
-                  className={`absolute text-left border px-4 py-3 transition-all duration-300 hover:cursor-pointer ${isActive
+                  className={`absolute text-left border px-4 py-3 transition-all duration-300 ease-out hover:cursor-pointer ${isActive
                     ? 'z-20 border-white/40 bg-[#111]'
                     : 'z-10 border-white/20 bg-black hover:border-white/40'
                     } ${showDescription ? 'w-64' : 'w-56'}`}
-                  style={{ left: service.left, top: service.top }}
+                  style={{
+                    left: service.left,
+                    top: service.top,
+                    transform: getConnectorTransform(service.anchor),
+                  }}
                 >
                   <div className="flex flex-row items-center gap-2">
                     <Image src={service.icon} alt="" width={18} height={18} />
@@ -151,7 +163,7 @@ export default function CreativeHouse() {
                     </h3>
                   </div>
                   {showDescription && (
-                    <p className="text-sm text-white/60 mt-3">{description}</p>
+                    <p className="text-sm text-white/60 mt-3 animate-[fadeIn_0.3s_ease-out]">{description}</p>
                   )}
                 </button>
               );
@@ -163,8 +175,8 @@ export default function CreativeHouse() {
             <Image
               src="/images/services_illustration.png"
               alt="Services"
-              width={300}
-              height={300}
+              width={264}
+              height={405}
               className="w-40 sm:w-48 h-auto mx-auto mb-4 opacity-90"
             />
             {services.map((service) => {
@@ -177,7 +189,7 @@ export default function CreativeHouse() {
                 <button
                   key={service.key}
                   onClick={() => setActiveService(service.key)}
-                  className={`text-left border px-4 py-3 transition-all duration-300 hover:cursor-pointer ${isActive ? 'border-white/40 bg-[#111]' : 'border-white/20 bg-black'
+                  className={`text-left border px-4 py-3 transition-all duration-300 ease-out hover:cursor-pointer ${isActive ? 'border-white/40 bg-[#111]' : 'border-white/20 bg-black'
                     }`}
                 >
                   <div className="flex flex-row items-center gap-2">
@@ -187,7 +199,7 @@ export default function CreativeHouse() {
                     </h3>
                   </div>
                   {showDescription && (
-                    <p className="text-sm text-white/60 mt-3">{description}</p>
+                    <p className="text-sm text-white/60 mt-3 animate-[fadeIn_0.3s_ease-out]">{description}</p>
                   )}
                 </button>
               );
@@ -210,21 +222,21 @@ export default function CreativeHouse() {
             <div className="flex flex-row md:flex-col gap-3 overflow-x-auto md:overflow-visible md:w-56 shrink-0">
               <button
                 onClick={() => setActiveCategory('all')}
-                className={`text-left text-sm px-4 py-2 border whitespace-nowrap hover:cursor-pointer ${activeCategory === 'all' ? 'bg-white text-black' : 'bg-black border-white/20 text-white/70'
+                className={`text-left text-sm px-4 py-2 border whitespace-nowrap transition-all duration-300 hover:cursor-pointer ${activeCategory === 'all' ? 'bg-white text-black' : 'bg-black border-white/20 text-white/70 hover:border-white/40 hover:text-white'
                   }`}
               >
                 {t('projects.categories.all')}
               </button>
               <button
                 onClick={() => setActiveCategory('mobile')}
-                className={`text-left text-sm px-4 py-2 border whitespace-nowrap hover:cursor-pointer ${activeCategory === 'mobile' ? 'bg-white text-black' : 'bg-black border-white/20 text-white/70'
+                className={`text-left text-sm px-4 py-2 border whitespace-nowrap transition-all duration-300 hover:cursor-pointer ${activeCategory === 'mobile' ? 'bg-white text-black' : 'bg-black border-white/20 text-white/70 hover:border-white/40 hover:text-white'
                   }`}
               >
                 {t('projects.categories.mobile')}
               </button>
               <button
                 onClick={() => setActiveCategory('web')}
-                className={`text-left text-sm px-4 py-2 border whitespace-nowrap hover:cursor-pointer ${activeCategory === 'web' ? 'bg-white text-black' : 'bg-black border-white/20 text-white/70'
+                className={`text-left text-sm px-4 py-2 border whitespace-nowrap transition-all duration-300 hover:cursor-pointer ${activeCategory === 'web' ? 'bg-white text-black' : 'bg-black border-white/20 text-white/70 hover:border-white/40 hover:text-white'
                   }`}
               >
                 {t('projects.categories.web')}
@@ -235,13 +247,13 @@ export default function CreativeHouse() {
               {projects
                 .filter((project) => activeCategory === 'all' || project.category === activeCategory)
                 .map((project) => (
-                  <div key={project.key} className="">
-                    <div className="relative aspect-[4/3] w-full">
+                  <div key={project.key} className="group transition-transform duration-300 hover:-translate-y-1">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden">
                       <Image
                         src={project.image}
                         alt={t(`projects.items.${project.key}.title`)}
                         fill
-                        className="object-cover"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
                         <Image
@@ -249,7 +261,7 @@ export default function CreativeHouse() {
                           alt={`${t(`projects.items.${project.key}.title`)} logo`}
                           width={140}
                           height={140}
-                          className="object-contain w-1/3 h-auto"
+                          className="object-contain w-1/3 h-auto transition-transform duration-500 group-hover:scale-110"
                         />
                       </div>
                     </div>
@@ -277,7 +289,7 @@ export default function CreativeHouse() {
 
       {/* CTA */}
       <section className="px-6 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto border border-white/20 bg-black relative py-16 px-6 md:px-16 text-center overflow-hidden">
+        <div className="max-w-4xl mx-auto border border-white/20 bg-black relative py-16 px-6 md:px-16 text-center overflow-hidden transition-colors duration-300 hover:border-white/30">
           {/* Fundo com efeito de glow, igual ao print */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute -top-16 left-4 w-40 h-40 md:w-56 md:h-56 bg-white/10 rounded-full blur-3xl" />
@@ -293,9 +305,12 @@ export default function CreativeHouse() {
             <p className="font-medium mb-8">{t('cta.highlight')}</p>
 
             <div className="flex justify-center">
-              <div className="relative w-fit isolate">
-                <div className="absolute inset-0 border border-white/30 bg-[#F2EFEF] opacity-50 translate-x-2 translate-y-2 -z-10" />
-                <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4">
+              <div className="relative w-fit isolate group">
+                <div className="absolute inset-0 border border-white/30 bg-[#F2EFEF] opacity-50 translate-x-2 translate-y-2 -z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1" />
+                <button
+                  onClick={() => setIsProjectModalOpen(true)}
+                  className="bg-white hover:bg-gray-200 hover:cursor-pointer text-black font-medium py-2 px-4 transition-colors duration-300"
+                >
                   {t('cta.button')}
                   <Image
                     src="/images/icons/schedule.png"
@@ -311,7 +326,11 @@ export default function CreativeHouse() {
         </div>
       </section>
 
-      <ContactSection />
+
+      <ContactModal
+        isOpen={isProjectModalOpen}
+        onClose={() => setIsProjectModalOpen(false)}
+      />
 
       <Footer />
     </>

@@ -36,7 +36,7 @@ export default function Navbar() {
 
             <Image
               src="/images/icons/forks.png"
-              width={15}
+              width={20}
               height={5}
               alt="Forks"
               className="inline-block ml-8"

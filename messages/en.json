@@ -133,6 +133,27 @@
       "highlight": "Unlock your potential now, and track the growth of your business.",
       "button": "Draft Session"
     },
+    "modal": {
+      "title": "Tell us about your project",
+      "checklist": {
+        "item1": "We will respond to you within 12 hours",
+        "item2": "Lorem ipsum dolor sit amet, consetetur sadipscing",
+        "item3": "Lorem ipsum dolor sit amet, consetetur sadipscing",
+        "item4": "Lorem ipsum dolor sit amet, consetetur sadipscing"
+      },
+      "serviceTitle": "Service",
+      "fullName": "Full name*",
+      "fullNamePlaceholder": "Your name",
+      "email": "Email*",
+      "emailPlaceholder": "your@email.com",
+      "projectDetails": "Project details*",
+      "projectDetailsPlaceholder": "Tell us about your project...",
+      "attach": "Attach a file(optional)",
+      "attachPlaceholder": "Choose a file or drag and drop here",
+      "submit": "Submit inquiry",
+      "contactInfoTitle": "Contact info",
+      "close": "Close"
+    },
     "footer": {
       "hire": {
         "title": "Do you want to hire our team?",

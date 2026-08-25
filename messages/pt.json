@@ -132,6 +132,27 @@
       "highlight": "Desbloqueie o potencial do seu negócio e acompanhe o seu crescimento.",
       "button": "Agendar uma sessão"
     },
+    "modal": {
+      "title": "Conte-nos sobre o seu projeto",
+      "checklist": {
+        "item1": "Responderemos no prazo de 12 horas",
+        "item2": "Lorem ipsum dolor sit amet, consetetur sadipscing",
+        "item3": "Lorem ipsum dolor sit amet, consetetur sadipscing",
+        "item4": "Lorem ipsum dolor sit amet, consetetur sadipscing"
+      },
+      "serviceTitle": "Serviço",
+      "fullName": "Nome completo*",
+      "fullNamePlaceholder": "O seu nome",
+      "email": "Email*",
+      "emailPlaceholder": "o.seu@email.com",
+      "projectDetails": "Detalhes do projeto*",
+      "projectDetailsPlaceholder": "Fale-nos sobre o seu projeto...",
+      "attach": "Anexar um ficheiro (opcional)",
+      "attachPlaceholder": "Escolha um ficheiro ou arraste e solte aqui",
+      "submit": "Enviar pedido",
+      "contactInfoTitle": "Informações de contacto",
+      "close": "Fechar"
+    },
     "footer": {
       "hire": {
         "title": "Pretende contratar a nossa equipa?",

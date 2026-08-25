@@ -4,8 +4,7 @@ import Image from "next/image"
 import { useTranslations } from 'next-intl'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import ContactSection from '@/components/ContactSection'
-import NeuralBrain from "@/components/NeuralBrain"
+import ContactModal from '@/components/ContactModal'
 
 export default function Home() {
   const t = useTranslations('Home');
@@ -16,7 +15,7 @@ export default function Home() {
         <main className="flex flex-1 w-full max-w-6xl flex-col items-center justify-between py-10 px-6 md:px-16 sm:items-start">
           <Navbar />
 
-          <div className="pb-10 pt-16 md:pb-20 md:pt-40 w-full">
+          <div className="pb-10 pt-16 md:pb-20 md:pt-40 w-full animate-[fadeIn_0.6s_ease-out]">
             <div className="flex flex-col md:flex-row justify-between gap-8">
               <div className="">
                 <p className="mb-2 text-lg">{t('banner.title')}</p>
@@ -25,16 +24,16 @@ export default function Home() {
                   {t('banner.description')}
                 </p>
 
-                <div className="relative w-fit">
-                  <div className="absolute inset-0 border bg-[#F2EFEF] opacity-50 border-white/30 translate-x-2 translate-y-2 -z-10" />
-                  <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black font-medium py-2 px-4">
+                <div className="relative w-fit group">
+                  <div className="absolute inset-0 border bg-[#F2EFEF] opacity-50 border-white/30 translate-x-2 translate-y-2 -z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1" />
+                  <button className="bg-white hover:bg-gray-200 hover:cursor-pointer text-black font-medium py-2 px-4 transition-colors duration-300">
                     {t('banner.button')}
                     <Image
                       src="/images/icons/arrow_forward.png"
                       alt="Arrow Right"
                       width={40}
                       height={30}
-                      className="inline-block ml-2"
+                      className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1"
                     />
                   </button>
                 </div>
@@ -46,13 +45,13 @@ export default function Home() {
                   alt="Banner"
                   width={500}
                   height={300}
-                  className="w-full h-auto md:w-[500px]"
+                  className="w-full h-auto md:w-[500px] transition-transform duration-500 hover:scale-[1.02]"
                 />
               </div>
             </div>
 
 
-            <div className="border border-white/20 px-4 py-8 mt-6 md:mt-0 ml-0 md:ml-12 bg-[#1A1A1A]">
+            <div className="border border-white/20 px-4 py-8 mt-6 md:mt-0 ml-0 md:ml-12 bg-[#1A1A1A] transition-colors duration-300 hover:border-white/30">
               <h2 className="text-lg md:text-xl text-center mb-2 text-medium">
                 {t('banner.title_qoute')}
               </h2>
@@ -65,13 +64,13 @@ export default function Home() {
       </div >
 
       <div className="flex flex-col md:flex-row ">
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 overflow-hidden">
           <Image
             src="/images/original-ae72b4ea7eed5c28c8aeb6d5153ab50f.png"
             alt="Banner"
             width={500}
             height={300}
-            className="w-full h-[280px] sm:h-[400px] md:h-[520px] object-cover"
+            className="w-full h-[280px] sm:h-[400px] md:h-[520px] object-cover transition-transform duration-700 hover:scale-105"
           />
         </div>
 
@@ -81,7 +80,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('mission.title')}</h2>
             <p className="text-lg">{t('mission.description')}</p>
 
-            <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8">
+            <button className="bg-white hover:bg-gray-200 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8 transition-colors duration-300 group">
               {t('mission.button')}
 
               <Image
@@ -89,7 +88,7 @@ export default function Home() {
                 alt="Arrow Right"
                 width={40}
                 height={20}
-                className="inline-block ml-2"
+                className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1"
               />
             </button>
           </div>
@@ -103,7 +102,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('story.title')}</h2>
             <p className="text-lg">{t('story.description')}</p>
 
-            <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8">
+            <button className="bg-white hover:bg-gray-200 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8 transition-colors duration-300 group">
               {t('mission.button')}
 
               <Image
@@ -111,31 +110,31 @@ export default function Home() {
                 alt="Arrow Right"
                 width={40}
                 height={20}
-                className="inline-block ml-2"
+                className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1"
               />
             </button>
           </div>
         </div>
 
-        <div className="w-full md:w-3/5">
+        <div className="w-full md:w-3/5 overflow-hidden">
           <Image
             src="/images/original-5828172199c35827a895546b8d91594d.png"
             alt="Banner"
             width={500}
             height={300}
-            className="w-full h-[280px] sm:h-[400px] md:h-[520px] object-cover"
+            className="w-full h-[280px] sm:h-[400px] md:h-[520px] object-cover transition-transform duration-700 hover:scale-105"
           />
         </div>
       </div>
 
       <div className="flex flex-col md:flex-row ">
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 overflow-hidden">
           <Image
             src="/images/original-d88d3cda965e1eb365f7b93cdc207f31.png"
             alt="Banner"
             width={500}
             height={300}
-            className="w-full h-[280px] sm:h-[400px] md:h-[520px] object-cover"
+            className="w-full h-[280px] sm:h-[400px] md:h-[520px] object-cover transition-transform duration-700 hover:scale-105"
           />
         </div>
 
@@ -145,7 +144,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('target.title')}</h2>
             <p className="text-lg">{t('target.description')}</p>
 
-            <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8">
+            <button className="bg-white hover:bg-gray-200 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8 transition-colors duration-300 group">
               {t('target.button')}
 
               <Image
@@ -153,7 +152,7 @@ export default function Home() {
                 alt="Arrow Right"
                 width={40}
                 height={30}
-                className="inline-block ml-2"
+                className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1"
               />
             </button>
           </div>
@@ -167,7 +166,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-12">{t('solution.title')}</h2>
 
             <div className="flex flex-col flex-wrap md:flex-row gap-3 md:gap-2">
-              <div className="bg-[#1a1a1a] p-4 border border-white/20 w-full md:w-2/5">
+              <div className="bg-[#1a1a1a] p-4 border border-white/20 w-full md:w-2/5 transition-all duration-300 hover:border-white/40 hover:-translate-y-1">
                 <div className="flex flex-row items-center gap-2 mb-2">
                   <Image
                     src="/images/icons/icon_tech.png"
@@ -179,7 +178,7 @@ export default function Home() {
                 </div>
                 <p className="text-sm mt-4">{t('solution.categories.category1.description')}</p>
               </div>
-              <div className="bg-[#1a1a1a] p-4 border border-white/20 w-full md:w-2/5">
+              <div className="bg-[#1a1a1a] p-4 border border-white/20 w-full md:w-2/5 transition-all duration-300 hover:border-white/40 hover:-translate-y-1">
                 <div className="flex flex-row items-center gap-2 mb-2">
                   <Image
                     src="/images/icons/icon_tech.png"
@@ -191,7 +190,7 @@ export default function Home() {
                 </div>
                 <p className="text-sm mt-4">{t('solution.categories.category2.description')}</p>
               </div>
-              <div className="bg-[#1a1a1a] p-4 border border-white/20 w-full md:w-2/5">
+              <div className="bg-[#1a1a1a] p-4 border border-white/20 w-full md:w-2/5 transition-all duration-300 hover:border-white/40 hover:-translate-y-1">
                 <div className="flex flex-row items-center gap-2 mb-2">
                   <Image
                     src="/images/icons/icon_tech.png"
@@ -203,7 +202,7 @@ export default function Home() {
                 </div>
                 <p className="text-sm mt-4">{t('solution.categories.category3.description')}</p>
               </div>
-              <div className="bg-[#1a1a1a] p-4 border border-white/20 w-full md:w-2/5">
+              <div className="bg-[#1a1a1a] p-4 border border-white/20 w-full md:w-2/5 transition-all duration-300 hover:border-white/40 hover:-translate-y-1">
                 <div className="flex flex-row items-center gap-2 mb-2">
                   <Image
                     src="/images/icons/icon_tech.png"
@@ -217,7 +216,7 @@ export default function Home() {
               </div>
             </div>
 
-            <button className="bg-white hover:bg-gray-500 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8">
+            <button className="bg-white hover:bg-gray-200 hover:cursor-pointer text-black text-lg md:text-xl font-medium py-2 px-4 mt-8 transition-colors duration-300 group">
               {t('solution.button')}
 
               <Image
@@ -225,19 +224,19 @@ export default function Home() {
                 alt="Arrow Right"
                 width={40}
                 height={30}
-                className="inline-block ml-2"
+                className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1"
               />
             </button>
           </div>
         </div>
 
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 overflow-hidden">
           <Image
             src="/images/original-bd9075c27de72a79fb78e2f76d3afb14.png"
             alt="Banner"
             width={500}
             height={300}
-            className="w-full h-[280px] sm:h-[400px] md:h-[620px] object-cover"
+            className="w-full h-[280px] sm:h-[400px] md:h-[620px] object-cover transition-transform duration-700 hover:scale-105"
           />
         </div>
       </div>
@@ -261,7 +260,7 @@ export default function Home() {
                 alt="Banner"
                 width={500}
                 height={300}
-                className="w-full"
+                className="w-full transition-transform duration-500 hover:scale-[1.02]"
               />
             </div>
           </div>
@@ -270,7 +269,7 @@ export default function Home() {
 
 
       <section className="max-w-6xl mx-auto px-6 md:px-0">
-        <div className="my-10 md:my-20 border border-white/20 py-5 px-6 md:px-[100px] w-full bg-[#1a1a1a]">
+        <div className="my-10 md:my-20 border border-white/20 py-5 px-6 md:px-[100px] w-full bg-[#1a1a1a] transition-colors duration-300 hover:border-white/30">
           <h2 className="text-xl md:text-2xl text-center mb-4">{t('solutions.title')}</h2>
 
           <div className="flex flex-col sm:flex-row gap-8 items-center justify-center">
@@ -279,7 +278,7 @@ export default function Home() {
               alt="Banner"
               width={200}
               height={100}
-              className="w-[140px] sm:w-[180px] md:w-[200px] h-auto"
+              className="w-[140px] sm:w-[180px] md:w-[200px] h-auto transition-transform duration-300 hover:scale-110"
             />
 
             <Image
@@ -287,7 +286,7 @@ export default function Home() {
               alt="Banner"
               width={200}
               height={100}
-              className="w-[140px] sm:w-[180px] md:w-[200px] h-auto"
+              className="w-[140px] sm:w-[180px] md:w-[200px] h-auto transition-transform duration-300 hover:scale-110"
             />
 
             <Image
@@ -295,13 +294,11 @@ export default function Home() {
               alt="Banner"
               width={200}
               height={100}
-              className="w-[140px] sm:w-[180px] md:w-[200px] h-auto"
+              className="w-[140px] sm:w-[180px] md:w-[200px] h-auto transition-transform duration-300 hover:scale-110"
             />
           </div>
         </div>
       </section>
-
-      <ContactSection />
 
       <Footer />
     </>
