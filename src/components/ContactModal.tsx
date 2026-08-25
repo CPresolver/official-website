@@ -1,10 +1,9 @@
 "use client"
 
-import Image from "next/image"
 import { useTranslations } from "next-intl"
 import { useEffect, useState } from "react"
 
-interface ProjectModalProps {
+interface ContactModalProps {
   isOpen: boolean
   onClose: () => void
 }
@@ -20,12 +19,20 @@ const SERVICE_KEYS = [
   "category8",
 ] as const
 
-export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
+export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const t = useTranslations("CreativeHouse")
   const tContact = useTranslations("Contact")
 
   const [selectedServices, setSelectedServices] = useState<string[]>([])
-  const [fileName, setFileName] = useState<string | null>(null)
+  const [file, setFile] = useState<File | null>(null)
+
+  const MAX_FILE_SIZE = 8 * 1024 * 1024 // 8MB — mantém a margem para o limite do Resend
+
+  const [fullName, setFullName] = useState("")
+  const [email, setEmail] = useState("")
+  const [projectDetails, setProjectDetails] = useState("")
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   // Fecha com a tecla Esc e bloqueia o scroll da página enquanto o modal está aberto
   useEffect(() => {
@@ -59,6 +66,57 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
     t("modal.checklist.item3"),
     t("modal.checklist.item4"),
   ]
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setStatus("sending")
+    setErrorMessage(null)
+
+    const projectTypeLabel = selectedServices
+      .map((key) => t(`services.categories.${key}.title`))
+      .join(", ")
+
+    if (file && file.size > MAX_FILE_SIZE) {
+      setStatus("error")
+      setErrorMessage("O ficheiro anexado é demasiado grande (máx. 8MB).")
+      return
+    }
+
+    try {
+      // Usamos FormData (multipart) em vez de JSON porque precisamos de
+      // enviar o ficheiro em binário — JSON não suporta isso diretamente.
+      const formData = new FormData()
+      formData.append("name", fullName)
+      formData.append("contact", email)
+      formData.append("project_type", projectTypeLabel)
+      formData.append("message", projectDetails)
+      if (file) formData.append("file", file)
+
+      // Nota: não definimos "Content-Type" manualmente — o browser define
+      // automaticamente "multipart/form-data" com o boundary correto.
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        throw new Error(data?.error || "Erro ao enviar o pedido.")
+      }
+
+      setStatus("success")
+      setFullName("")
+      setEmail("")
+      setProjectDetails("")
+      setSelectedServices([])
+      setFile(null)
+      onClose()
+    } catch (err) {
+      setStatus("error")
+      setErrorMessage(err instanceof Error ? err.message : "Erro inesperado.")
+    }
+  }
 
   return (
     <div
@@ -128,14 +186,7 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
           </div>
 
           {/* Coluna direita — formulário */}
-          <form
-            className="flex flex-col gap-8"
-            onSubmit={(e) => {
-              e.preventDefault()
-              // TODO: ligar à integração de envio (API route / serviço de email)
-              onClose()
-            }}
-          >
+          <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
             <div>
               <h3 className="text-lg font-bold mb-4">{t("modal.serviceTitle")}</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -147,8 +198,8 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
                       key={key}
                       onClick={() => toggleService(key)}
                       className={`text-sm px-4 py-3 border text-center transition-all duration-300 hover:cursor-pointer ${isSelected
-                          ? "bg-white text-black border-white"
-                          : "border-white/20 text-white/80 hover:border-white/40"
+                        ? "bg-white text-black border-white"
+                        : "border-white/20 text-white/80 hover:border-white/40"
                         }`}
                     >
                       {t(`services.categories.${key}.title`)}
@@ -167,6 +218,8 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
                   id="modal-full-name"
                   type="text"
                   required
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
                   placeholder={t("modal.fullNamePlaceholder")}
                   className="w-full bg-transparent border-b border-white/30 py-2 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors duration-300"
                 />
@@ -179,6 +232,8 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
                   id="modal-email"
                   type="email"
                   required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder={t("modal.emailPlaceholder")}
                   className="w-full bg-transparent border-b border-white/30 py-2 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors duration-300"
                 />
@@ -193,6 +248,8 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
                 id="modal-project-details"
                 required
                 rows={1}
+                value={projectDetails}
+                onChange={(e) => setProjectDetails(e.target.value)}
                 placeholder={t("modal.projectDetailsPlaceholder")}
                 className="w-full resize-none bg-transparent border-b border-white/30 py-2 text-white placeholder-white/30 focus:outline-none focus:border-white transition-colors duration-300"
               />
@@ -204,23 +261,28 @@ export default function ProjectModal({ isOpen, onClose }: ProjectModalProps) {
                 htmlFor="modal-file"
                 className="flex items-center justify-center text-center px-4 py-10 border border-dashed border-white/30 text-white/50 text-sm cursor-pointer hover:border-white/50 hover:text-white/70 transition-colors duration-300"
               >
-                {fileName ?? t("modal.attachPlaceholder")}
+                {file?.name ?? t("modal.attachPlaceholder")}
               </label>
               <input
                 id="modal-file"
                 type="file"
                 className="hidden"
-                onChange={(e) => setFileName(e.target.files?.[0]?.name ?? null)}
+                onChange={(e) => setFile(e.target.files?.[0] ?? null)}
               />
             </div>
+
+            {status === "error" && errorMessage && (
+              <p className="text-sm text-red-400">{errorMessage}</p>
+            )}
 
             <div className="relative w-full isolate group">
               <div className="absolute inset-0 border border-white/30 bg-[#F2EFEF] opacity-50 translate-x-2 translate-y-2 -z-10 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1" />
               <button
                 type="submit"
-                className="w-full bg-[#C4C4C4] hover:bg-white hover:cursor-pointer text-black font-medium py-3 px-4 transition-colors duration-300"
+                disabled={status === "sending"}
+                className="w-full bg-[#C4C4C4] hover:bg-white hover:cursor-pointer text-black font-medium py-3 px-4 transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {t("modal.submit")}
+                {status === "sending" ? "..." : t("modal.submit")}
               </button>
             </div>
           </form>
